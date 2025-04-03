@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bağımsız Bölüm</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6b48ff, #00ddeb);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 4000px;
+            background-color: white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #ff6f61;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .nav-tabs {
+            background: linear-gradient(135deg, #d4a5ff, #a3e4ff);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            color: #2a2e57;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #ff6f61;
+        }
+
+        form {
+            background-color: #2a2e57;
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            color: #ff6f61;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            color: #ffffff;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 25px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ffffff; /* Beyaz arka plan */
+            color: #2a2e57; /* Koyu yazı rengi */
+            font-size: 1em;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .form-control::placeholder {
+            color: #a3bffa;
+        }
+
+        .form-control:focus {
+            background-color: #ffffff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+        }
+
+        select.form-control {
+            color: #2a2e57;
+        }
+
+        select.form-control option {
+            background-color: #ffffff;
+            color: #2a2e57;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .btn-primary {
+            background-color: #ff9f1c;
+            color: #2a2e57;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffb347;
+        }
+
+        .btn-secondary {
+            background-color: #48dbfb;
+            color: #2a2e57;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #70e7fd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2><i class="fas fa-door-open"></i> Bağımsız Bölüm Bilgileri</h2>  <a class="nav-link" href="../anasayfa.html"><i class="fa-solid fa-house-chimney-user"></i> ANASAYFAYA DÖN</a>
+        <nav>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="Tapu-Adres Bilgileri.html"><i class="fas fa-map-marked-alt"></i> Tapu/Adres</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Yasal Kısıtlamalar.html"><i class="fas fa-exclamation-triangle"></i> Yasal Kısıtlama</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="İmar Durumu.html"><i class="fas fa-city"></i> İmar Durumu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Kurum İncelemeleri.html"><i class="fas fa-building"></i> Kurum İnceleme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Ana Gayrimenkul.html"><i class="fas fa-home"></i> Ana Gayrimenkul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Blok Ana Gayrimenkul.html"><i class="fas fa-home"></i> Blok Ana Gayrimenkul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="Bağımsız Bölüm.html"><i class="fas fa-door-open"></i> Bağımsız Bölüm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Emsaller.html"><i class="fas fa-balance-scale"></i> Emsaller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Değerleme.html"><i class="fas fa-coins"></i> Değerleme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Taslaklar.html"><i class="fas fa-file-alt"></i> Taslak</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="RAPOR.html"><i class="fas fa-file-invoice"></i> RAPOR</a>
+                </li>
+            </ul>
+        </nav>
+        <form id="bagimsizBolumForm">
+            <fieldset>
+                <legend>Bloksuz Bağımsız Bölüm Bilgileri</legend>
+                <div class="form-row">
+                    <div class="form-group col-md-1">
+                        <label for="bbNumarasiBagimsiz">BB No:</label>
+                        <input type="text" class="form-control" id="bbNumarasiBagimsiz">
+                    </div>
+                    <div class="form-group col-md-1">
+                        <label for="bbNumarasinitelik">Niteliği:</label>
+                        <input type="text" class="form-control" id="bbNumarasinitelik">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="katSecimiBagimsiz">Hangi Katta Konumlu:</label>
+                        <select class="form-control" id="katSecimiBagimsiz">
+                            <option>10.Bodrum Kat</option>
+                            <option>9. Bodrum Kat</option>
+                            <option>8. Bodrum Kat</option>
+                            <option>7. Bodrum Kat</option>
+                            <option>6. Bodrum Kat</option>
+                            <option>5. Bodrum Kat</option>
+                            <option>4. Bodrum Kat</option>
+                            <option>3. Bodrum Kat</option>
+                            <option>2. Bodrum Kat</option>
+                            <option>1. Bodrum Kat</option>
+                            <option>Zemin Kat</option>
+                            <option>Asma Kat</option>
+                            <option>Çatı Kat</option>
+                            <option>1.Normal Kat</option>
+                            <option>2. Normal Kat</option>
+                            <option>3. Normal Kat</option>
+                            <option>4.Normal Kat</option>
+                            <option>5.Normal Kat</option>
+                            <option>6.Normal Kat</option>
+                            <option>7.Normal Kat</option>
+                            <option>8.Normal Kat</option>
+                            <option>9.Normal Kat</option>
+                            <option>10.Normal Kat</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="konumuBagimsiz">Bina Girişine Göre Konumu</label>
+                        <input type="text" class="form-control" id="konumuBagimsiz">
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="projeBagimsiz">Mimari Projesine Göre Oda Sayısı</label>
+                        <input type="text" class="form-control" id="projeBagimsiz">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="yasalAlanBagimsiz">Yasal Alan:</label>
+                        <input type="text" class="form-control" id="yasalAlanBagimsiz">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="mevcutAlanBagimsiz">Mevcut Alan:</label>
+                        <input type="text" class="form-control" id="mevcutAlanBagimsiz">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Bloksuz Bağımsız Bölümün İç Hacim Özellikleri</legend>
+                <div class="form-group col-md-12">
+                    <label for="icHacimOzellikleri">Bağımsız Bölümün İç Hacim Özellikleri:</label>
+                    <textarea class="form-control" id="icHacimOzellikleri" rows="6"></textarea>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Bloklu Bağımsız Bölüm Bilgileri</legend>
+                <div class="form-row">
+                    <div class="form-group col-md-1">
+                        <label for="blokbbNumarasiBagimsiz">BB No:</label>
+                        <input type="text" class="form-control" id="blokbbNumarasiBagimsiz">
+                    </div>
+                    <div class="form-group col-md-1">
+                        <label for="blokbbNumarasinitelik">Niteliği:</label>
+                        <input type="text" class="form-control" id="blokbbNumarasinitelik">
+                    </div>
+                    <div class="form-group col-md-1">
+                        <label for="blokbbNumarasikonum">Hangi Blok:</label>
+                        <input type="text" class="form-control" id="blokbbNumarasikonum">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="blokkatSecimiBagimsiz">Hangi Katta Konumlu:</label>
+                        <select class="form-control" id="blokkatSecimiBagimsiz">
+                            <option>10.Bodrum Kat</option>
+                            <option>9. Bodrum Kat</option>
+                            <option>8. Bodrum Kat</option>
+                            <option>7. Bodrum Kat</option>
+                            <option>6. Bodrum Kat</option>
+                            <option>5. Bodrum Kat</option>
+                            <option>4. Bodrum Kat</option>
+                            <option>3. Bodrum Kat</option>
+                            <option>2. Bodrum Kat</option>
+                            <option>1. Bodrum Kat</option>
+                            <option>Zemin Kat</option>
+                            <option>Asma Kat</option>
+                            <option>Çatı Kat</option>
+                            <option>1.Normal Kat</option>
+                            <option>2. Normal Kat</option>
+                            <option>3. Normal Kat</option>
+                            <option>4.Normal Kat</option>
+                            <option>5.Normal Kat</option>
+                            <option>6.Normal Kat</option>
+                            <option>7.Normal Kat</option>
+                            <option>8.Normal Kat</option>
+                            <option>9.Normal Kat</option>
+                            <option>10.Normal Kat</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-7">
+                        <label for="blokkonumuBagimsiz">Bina Girişine Göre Konumu</label>
+                        <input type="text" class="form-control" id="blokkonumuBagimsiz">
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="blokprojeBagimsiz">Mimari Projesine Göre Oda Sayısı</label>
+                        <input type="text" class="form-control" id="blokprojeBagimsiz">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="blokyasalAlanBagimsiz">Yasal Alan:</label>
+                        <input type="text" class="form-control" id="blokyasalAlanBagimsiz">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="blokmevcutAlanBagimsiz">Mevcut Alan:</label>
+                        <input type="text" class="form-control" id="blokmevcutAlanBagimsiz">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Bloklu Bağımsız Bölümün İç Hacim Özellikleri</legend>
+                <div class="form-group col-md-12">
+                    <label for="blokicHacimOzellikleri">Bağımsız Bölümün İç Hacim Özellikleri:</label>
+                    <textarea class="form-control" id="blokicHacimOzellikleri" rows="6"></textarea>
+                </div>
+            </fieldset>
+            <button type="button" class="btn btn-primary" onclick="kaydetBagimsizBolum()">Kaydet</button>
+            <button type="button" class="btn btn-secondary" onclick="temizleBagimsizBolum()">Temizle</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+
+function alanEkle(alanId) {
+    const alan = document.querySelector(`#${alanId} .eklenebilir-alan`).cloneNode(true);
+    document.getElementById(alanId).appendChild(alan);
+}
+
+function alanSil(button) {
+    button.closest('.eklenebilir-alan').remove();
+}
+
+function kaydetBagimsizBolum() {
+    const bagimsizBolumData = {
+        bloksuzBagimsiz: {
+            bbNumarasi: document.getElementById('bbNumarasiBagimsiz').value,
+            nitelik: document.getElementById('bbNumarasinitelik').value,
+            katKonumu: document.getElementById('katSecimiBagimsiz').value,
+            konumu: document.getElementById('konumuBagimsiz').value,
+            proje: document.getElementById('projeBagimsiz').value,
+            yasalAlan: document.getElementById('yasalAlanBagimsiz').value,
+            mevcutAlan: document.getElementById('mevcutAlanBagimsiz').value,
+            icHacimOzellikleri: document.getElementById('icHacimOzellikleri').value
+        },
+        blokluBagimsiz: {
+            bbNumarasi: document.getElementById('blokbbNumarasiBagimsiz').value,
+            nitelik: document.getElementById('blokbbNumarasinitelik').value,
+            blok: document.getElementById('blokbbNumarasikonum').value,
+            katKonumu: document.getElementById('blokkatSecimiBagimsiz').value,
+            konumu: document.getElementById('blokkonumuBagimsiz').value,
+            proje: document.getElementById('blokprojeBagimsiz').value,
+            yasalAlan: document.getElementById('blokyasalAlanBagimsiz').value,
+            mevcutAlan: document.getElementById('blokmevcutAlanBagimsiz').value,
+            icHacimOzellikleri: document.getElementById('blokicHacimOzellikleri').value
+        }
+    };
+
+    localStorage.setItem('bagimsiz_bolum', JSON.stringify(bagimsizBolumData));
+    alert('Bağımsız Bölüm bilgileri başarıyla kaydedildi!');
+}
+
+function temizleBagimsizBolum() {
+    // Form elemanlarını tek tek temizle
+    const formElements = [
+        'bbNumarasiBagimsiz', 'bbNumarasinitelik', 'katSecimiBagimsiz', 'konumuBagimsiz',
+        'projeBagimsiz', 'yasalAlanBagimsiz', 'mevcutAlanBagimsiz', 'icHacimOzellikleri',
+        'blokbbNumarasiBagimsiz', 'blokbbNumarasinitelik', 'blokbbNumarasikonum',
+        'blokkatSecimiBagimsiz', 'blokkonumuBagimsiz', 'blokprojeBagimsiz',
+        'blokyasalAlanBagimsiz', 'blokmevcutAlanBagimsiz', 'blokicHacimOzellikleri'
+    ];
+
+    formElements.forEach(elementId => {
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.value = '';
+        }
+    });
+
+    localStorage.removeItem('bagimsiz_bolum');
+    alert('Form temizlendi!');
+}
+
+
+
+    </script>
+</body>
+</html>

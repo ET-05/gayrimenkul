@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Değerleme</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6b48ff, #00ddeb);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 4000px;
+            background-color: white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #ff6f61;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .nav-tabs {
+            background: linear-gradient(135deg, #d4a5ff, #a3e4ff);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            color: #2a2e57;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #ff6f61;
+        }
+
+        form {
+            background-color: #2a2e57;
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            color: #ff6f61;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .form-group label, .form-check-label {
+            color: #a3bffa;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 25px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ffffff;
+            color: #2a2e57;
+            font-size: 1em;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .form-control::placeholder {
+            color: #a3bffa;
+        }
+
+        .form-control:focus {
+            background-color: #ffffff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+        }
+
+        select.form-control {
+            color: #2a2e57;
+        }
+
+        select.form-control option {
+            background-color: #ffffff;
+            color: #2a2e57;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .form-check-input {
+            margin-top: 0.4rem;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background-color: #ff9f1c;
+            color: #2a2e57;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffb347;
+        }
+
+        .btn-secondary {
+            background-color: #48dbfb;
+            color: #2a2e57;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #70e7fd;
+        }
+
+        .btn-success {
+            background-color: #48dbfb;
+            color: #2a2e57;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-success:hover {
+            background-color: #70e7fd;
+        }
+
+        .btn-danger {
+            background-color: #ff6f61;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-danger:hover {
+            background-color: #ff8a7a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2><i class="fas fa-coins"></i> Değerleme</h2>  <a class="nav-link" href="../anasayfa.html"><i class="fa-solid fa-house-chimney-user"></i> ANASAYFAYA DÖN</a>
+        <nav>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="Tapu-Adres Bilgileri.html"><i class="fas fa-map-marked-alt"></i> Tapu/Adres</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Yasal Kısıtlamalar.html"><i class="fas fa-exclamation-triangle"></i> Yasal Kısıtlama</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="İmar Durumu.html"><i class="fas fa-city"></i> İmar Durumu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Kurum İncelemeleri.html"><i class="fas fa-building"></i> Kurum İnceleme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Ana Gayrimenkul.html"><i class="fas fa-home"></i> Ana Gayrimenkul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Blok Ana Gayrimenkul.html"><i class="fas fa-home"></i> Blok Ana Gayrimenkul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bağımsız Bölüm.html"><i class="fas fa-door-open"></i> Bağımsız Bölüm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Emsaller.html"><i class="fas fa-balance-scale"></i> Emsaller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="Değerleme.html"><i class="fas fa-coins"></i> Değerleme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Taslaklar.html"><i class="fas fa-file-alt"></i> Taslak</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="RAPOR.html"><i class="fas fa-file-invoice"></i> RAPOR</a>
+                </li>
+            </ul>
+        </nav>
+        <form id="degerlemeForm">
+            <fieldset>
+                <legend>Satış Durumu</legend>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="satisTaslak1">
+                    <label class="form-check-label" for="satisTaslak1">Değerleme konusu taşınmazların bulunduğu konum, çevre, inşai özellikleri, bina yaşı, bina/blok, kat ve kattaki konum olarak projesi ile uyumlu olması, aynı zamanda da tapu kayıtlarında satışa engel olabilecek herhangi bir takyidat bulunmaması nedeniyle SATILABİLİR olarak belirtilmiştir.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="satisTaslak2">
+                    <label class="form-check-label" for="satisTaslak2">Rapor içeriğinde özellikleri belirtilen taşınmaz/taşınmazlara, yerinde yapılan incelemeye istinaden, konumu, kullanım alanı büyüklüğü, yapı kalitesi, mimari özellikleri ve çevrede yapılan piyasa araştırmaları dikkate alınarak, tüm olumlu ve olumsuz yönlerinin kıyaslanması neticesinde, yapılarda tasdikli mimari projesindeki metraj esas alınmak suretiyle, günümüz ekonomik koşulları doğrultusunda nihai değer takdir edilmiştir. Tapu kayıtlarında satışa engel olabilecek herhangi bir takyidat bulunmaması nedeniyle SATILABİLİR olarak belirtilmiştir.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="satisTaslak3">
+                    <label class="form-check-label" for="satisTaslak3">Taşınmazın konumu, kullanım özellikleri ve piyasa koşulları göz önüne alındığında, tapu kayıtlarında satışa engel bir durum olmaması sebebiyle SATILABİLİR olarak değerlendirilmiştir.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="satisTaslak4">
+                    <label class="form-check-label" for="satisTaslak4">Değerleme konusu taşınmaz, mevcut piyasa talepleri ve çevresel faktörler dikkate alınarak incelenmiş, tapu kayıtlarında herhangi bir kısıtlama bulunmaması nedeniyle SATILABİLİR olarak nitelendirilmiştir.</label>
+                </div>
+                <div class="form-group">
+                    <label for="satisKabiliyeti">Satış Kabiliyeti Yazınız</label>
+                    <textarea class="form-control" id="satisKabiliyeti" rows="3"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Faktörler</legend>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="olumluFaktorler">Olumlu Faktörler:</label>
+                        <select multiple class="form-control" id="olumluFaktorler" size="15" style="height: 400px;">
+                            <option>Yapı Kullanma İzin Belgesi almış, kat mülkiyeti kurulmuş olması</option>
+                            <option>Otoparkının ve asansörünün bulunması</option>
+                            <option>Kullanılan malzeme ve işçiliklerin iyi olması</option>
+                            <option>Doğalgaz yakıtlı ve kat kaloriferli olması</option>
+                            <option>Şehir merkezine yakın konumda olması</option>
+                            <option>Ulaşılabilirliğinin iyi olması</option>
+                            <option>Ara katta yer alması</option>
+                            <option>Taşınmazın bakımlı olması</option>
+                            <option>Bölgenin yüksek gelire sahip kişiler tarafından tercih ediliyor olması</option>
+                            <option>Önemli merkezlere yakın konumda yer alması</option>
+                            <option>Gelişmekte olan bölgede konumlanması</option>
+                            <option>Yeni binada yer alması</option>
+                            <option>Merkezi konumda olması</option>
+                            <option>Üst gelir grubu ikame alanında kalması</option>
+                            <option>Site içinde yer alması</option>
+                            <option>Bakımlı olması, Asansörlü binada yer alması</option>
+                            <option>Bölgede satış hızının yüksek olması</option>
+                            <option>İl merkezinde yer alması</option>
+                            <option>İlçede tercih edilen bölgede yer alması</option>
+                            <option>Kat mülkiyetinin kurulmuş olması</option>
+                            <option>Kullanım alanının geniş ve kullanışlı olması</option>
+                            <option>Önemli merkezlere yürüme mesafesinde konumlu olması</option>
+                            <option>Projesi ile uyumlu olması</option>
+                            <option>Sosyal ve kültürel olanaklara olan yakınlığı</option>
+                            <option>Tamamlanmış alt yapısı</option>
+                            <option>Yakın çevresinde bir çok kamu kurum ve kuruluşların bulunması</option>
+                            <option>Kaliteli malzeme ve işçilikle inşa edilmiş olması</option>
+                            <option>Yüksek gelire sahip kişiler tarafından tercih edilen sitede yer alması</option>
+                            <option>Kapalı otopark ve güvenlikli site içerisinde olması</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="olumsuzFaktorler">Olumsuz Faktörler:</label>
+                        <select multiple class="form-control" id="olumsuzFaktorler" size="15" style="height: 400px;">
+                            <option>Şehir merkezine uzak konumda olması</option>
+                            <option>En üst katta yer alması</option>
+                            <option>Alt gelir grubu ikame alanında kalması</option>
+                            <option>Arka cephede yer alması ve istinat duvarına bakması</option>
+                            <option>Çevresindeki yolların halen stabilize konumda olması</option>
+                            <option>Çevresinde yapılaşmanın seyrek olması</option>
+                            <option>Taşınmazın bakıma ihtiyacı olması</option>
+                            <option>Kalorifer tesisatının olmaması</option>
+                            <option>Yapı ruhsatının süresinin dolmuş, yapı kullanma izin belgesi almamış olması</option>
+                            <option>Taşınmazın hisseli olması</option>
+                            <option>Asansörsüz binada yer alması</option>
+                            <option>Ara sokak cepheli binada yer alması</option>
+                            <option>Natamam olması, inşaat tamamlanma sürecinin devam ediyor olması</option>
+                            <option>Zemin katta yer alması</option>
+                            <option>Yapı yaşı yüksek binada yer alması</option>
+                            <option>Doğu-Batı olmak üzere iki cepheli olması</option>
+                            <option>Yapı kullanım izin belgesi almamış kat mülkiyetine geçilmemiş olması</option>
+                            <option>Kullanım alanının kısıtlı olması</option>
+                            <option>Belediye alt yapı hizmetlerinin kısmen eksik vaziyette olması</option>
+                            <option>İl merkezine uzak konumda olması</option>
+                            <option>Düşük kalitede malzeme ve işçilikle inşa edilmiş olması</option>
+                            <option>Taşınmazların ara sokak cepheli olmaları sebebiyle görünürlüğünün düşük olması</option>
+                            <option>Yapı ruhsatının geçerlilik süresinin dolmuş olması</option>
+                            <option>Yatak odalarının yalnızca aydınlık bölümünden ışık alıyor olması</option>
+                            <option>Bodrum katta yer alması</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Değerleme Taslakları</legend>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="degerlemeTaslak1">
+                    <label class="form-check-label" for="degerlemeTaslak1">Taşınmazın piyasa değeri, emsal karşılaştırma yöntemiyle belirlenmiş olup, çevrede yapılan araştırmalar ve mevcut ekonomik koşullar dikkate alınmıştır.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="degerlemeTaslak2">
+                    <label class="form-check-label" for="degerlemeTaslak2">Değerleme, maliyet yaklaşımı ve gelir kapitalizasyon yöntemiyle desteklenmiş, taşınmazın mevcut durumu ve piyasa trendleri esas alınmıştır.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="degerlemeTaslak3">
+                    <label class="form-check-label" for="degerlemeTaslak3">Taşınmazın değeri, bölgedeki benzer taşınmazların satış verileri ve yapı özellikleri dikkate alınarak hesaplanmıştır.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="degerlemeTaslak4">
+                    <label class="form-check-label" for="degerlemeTaslak4">Değerleme, taşınmazın yasal kullanım alanı ve mevcut kullanım alanı arasındaki farklar göz önünde bulundurularak yapılmıştır.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="degerlemeTaslak5">
+                    <label class="form-check-label" for="degerlemeTaslak5">Taşınmazın nihai değeri, piyasa koşulları, yapı kalitesi ve çevresel faktörlerin detaylı analiziyle belirlenmiştir.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="degerlemeTaslak6">
+                    <label class="form-check-label" for="degerlemeTaslak6">Değerleme, taşınmazın mevcut durumu, kullanım potansiyeli ve bölgedeki arz-talep dengesi esas alınarak gerçekleştirilmiştir.</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Değerleme Detayları</legend>
+                <div class="form-group">
+                    <label for="degerlemeDetayi">Değerleme Detayı Giriniz</label>
+                    <textarea class="form-control" id="degerlemeDetayi" rows="3"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Değerleme Sonuçları</legend>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="yasalKullanimAlani">Yasal Kullanım Alanı (m²)</label>
+                        <input type="number" step="0.01" class="form-control" id="yasalKullanimAlani">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="yasalBirimFiyati">Yasal Birim Fiyatı (TL/m²)</label>
+                        <input type="number" step="0.01" class="form-control" id="yasalBirimFiyati">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="toplamYasalDeger">Toplam Yasal Değer (TL)</label>
+                        <input type="number" step="0.01" class="form-control" id="toplamYasalDeger" readonly>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="mevcutKullanimAlani">Mevcut Kullanım Alanı (m²)</label>
+                        <input type="number" step="0.01" class="form-control" id="mevcutKullanimAlani">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="mevcutBirimFiyati">Mevcut Birim Fiyatı (TL/m²)</label>
+                        <input type="number" step="0.01" class="form-control" id="mevcutBirimFiyati">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="toplamMevcutDeger">Toplam Mevcut Değer (TL)</label>
+                        <input type="number" step="0.01" class="form-control" id="toplamMevcutDeger" readonly>
+                    </div>
+                </div>
+            </fieldset>
+
+            <button type="button" class="btn btn-primary" onclick="kaydetDegerleme()">Kaydet</button>
+            <button type="button" class="btn btn-secondary" onclick="temizleDegerleme()">Temizle</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Calculate total values when input changes
+        document.getElementById('yasalKullanimAlani').addEventListener('input', calculateYasalTotal);
+        document.getElementById('yasalBirimFiyati').addEventListener('input', calculateYasalTotal);
+        document.getElementById('mevcutKullanimAlani').addEventListener('input', calculateMevcutTotal);
+        document.getElementById('mevcutBirimFiyati').addEventListener('input', calculateMevcutTotal);
+
+        function calculateYasalTotal() {
+            const alan = parseFloat(document.getElementById('yasalKullanimAlani').value) || 0;
+            const birimFiyat = parseFloat(document.getElementById('yasalBirimFiyati').value) || 0;
+            const total = alan * birimFiyat;
+            document.getElementById('toplamYasalDeger').value = total.toFixed(2);
+        }
+
+        function calculateMevcutTotal() {
+            const alan = parseFloat(document.getElementById('mevcutKullanimAlani').value) || 0;
+            const birimFiyat = parseFloat(document.getElementById('mevcutBirimFiyati').value) || 0;
+            const total = alan * birimFiyat;
+            document.getElementById('toplamMevcutDeger').value = total.toFixed(2);
+        }
+
+        // Değerleme formunu kaydetme fonksiyonu
+        function kaydetDegerleme() {
+            const satisBilgileri = {
+                taslak1: document.getElementById('satisTaslak1').checked,
+                taslak2: document.getElementById('satisTaslak2').checked,
+                taslak3: document.getElementById('satisTaslak3').checked,
+                taslak4: document.getElementById('satisTaslak4').checked,
+                satisKabiliyeti: document.getElementById('satisKabiliyeti').value || ''
+            };
+
+            const olumluFaktorler = Array.from(document.getElementById('olumluFaktorler').selectedOptions)
+                .map(option => option.value);
+
+            const olumsuzFaktorler = Array.from(document.getElementById('olumsuzFaktorler').selectedOptions)
+                .map(option => option.value);
+
+            const degerlemeTaslaklari = {
+                taslak1: document.getElementById('degerlemeTaslak1').checked,
+                taslak2: document.getElementById('degerlemeTaslak2').checked,
+                taslak3: document.getElementById('degerlemeTaslak3').checked,
+                taslak4: document.getElementById('degerlemeTaslak4').checked,
+                taslak5: document.getElementById('degerlemeTaslak5').checked,
+                taslak6: document.getElementById('degerlemeTaslak6').checked
+            };
+
+            const degerlemeDetaylari = {
+                detay: document.getElementById('degerlemeDetayi').value || '',
+                yasalKullanimAlani: document.getElementById('yasalKullanimAlani').value || '',
+                yasalBirimFiyati: document.getElementById('yasalBirimFiyati').value || '',
+                toplamYasalDeger: document.getElementById('toplamYasalDeger').value || '',
+                mevcutKullanimAlani: document.getElementById('mevcutKullanimAlani').value || '',
+                mevcutBirimFiyati: document.getElementById('mevcutBirimFiyati').value || '',
+                toplamMevcutDeger: document.getElementById('toplamMevcutDeger').value || ''
+            };
+
+            const degerlemeBilgileri = {
+                satisBilgileri,
+                olumluFaktorler,
+                olumsuzFaktorler,
+                degerlemeTaslaklari,
+                degerlemeDetaylari
+            };
+
+            localStorage.setItem('degerlemeBilgileri', JSON.stringify(degerlemeBilgileri));
+            alert('Veriler başarıyla kaydedildi!');
+        }
+
+        // Formu temizleme fonksiyonu
+        function temizleDegerleme() {
+            document.getElementById('degerlemeForm').reset();
+            localStorage.removeItem('degerlemeBilgileri');
+            alert('Form temizlendi!');
+        }
+
+        // Sayfa yüklendiğinde kaydedilmiş verileri yükle
+        document.addEventListener('DOMContentLoaded', function() {
+            const degerlemeBilgileri = JSON.parse(localStorage.getItem('degerlemeBilgileri'));
+
+            if (degerlemeBilgileri) {
+                const { satisBilgileri, olumluFaktorler, olumsuzFaktorler, degerlemeTaslaklari, degerlemeDetaylari } = degerlemeBilgileri;
+
+                // Satış bilgileri
+                document.getElementById('satisTaslak1').checked = satisBilgileri.taslak1;
+                document.getElementById('satisTaslak2').checked = satisBilgileri.taslak2;
+                document.getElementById('satisTaslak3').checked = satisBilgileri.taslak3;
+                document.getElementById('satisTaslak4').checked = satisBilgileri.taslak4;
+                document.getElementById('satisKabiliyeti').value = satisBilgileri.satisKabiliyeti;
+
+                // Olumlu faktörler
+                olumluFaktorler.forEach(faktor => {
+                    const option = document.querySelector(`#olumluFaktorler option[value="${faktor}"]`);
+                    if (option) option.selected = true;
+                });
+
+                // Olumsuz faktörler
+                olumsuzFaktorler.forEach(faktor => {
+                    const option = document.querySelector(`#olumsuzFaktorler option[value="${faktor}"]`);
+                    if (option) option.selected = true;
+                });
+
+                // Değerleme taslakları
+                document.getElementById('degerlemeTaslak1').checked = degerlemeTaslaklari.taslak1;
+                document.getElementById('degerlemeTaslak2').checked = degerlemeTaslaklari.taslak2;
+                document.getElementById('degerlemeTaslak3').checked = degerlemeTaslaklari.taslak3;
+                document.getElementById('degerlemeTaslak4').checked = degerlemeTaslaklari.taslak4;
+                document.getElementById('degerlemeTaslak5').checked = degerlemeTaslaklari.taslak5;
+                document.getElementById('degerlemeTaslak6').checked = degerlemeTaslaklari.taslak6;
+
+                // Değerleme detayları
+                document.getElementById('degerlemeDetayi').value = degerlemeDetaylari.detay;
+                document.getElementById('yasalKullanimAlani').value = degerlemeDetaylari.yasalKullanimAlani;
+                document.getElementById('yasalBirimFiyati').value = degerlemeDetaylari.yasalBirimFiyati;
+                document.getElementById('toplamYasalDeger').value = degerlemeDetaylari.toplamYasalDeger;
+                document.getElementById('mevcutKullanimAlani').value = degerlemeDetaylari.mevcutKullanimAlani;
+                document.getElementById('mevcutBirimFiyati').value = degerlemeDetaylari.mevcutBirimFiyati;
+                document.getElementById('toplamMevcutDeger').value = degerlemeDetaylari.toplamMevcutDeger;
+            }
+        });
+    </script>
+</body>
+</html>

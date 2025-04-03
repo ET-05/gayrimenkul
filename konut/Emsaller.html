@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emsaller</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6b48ff, #00ddeb);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 4000px;
+            background-color: white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #ff6f61;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .nav-tabs {
+            background: linear-gradient(135deg, #d4a5ff, #a3e4ff);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            color: #2a2e57;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #ff6f61;
+        }
+
+        form {
+            background-color: #2a2e57;
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            color: #ff6f61;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            color: #ffffff;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 25px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ffffff; /* Beyaz arka plan */
+            color: #2a2e57; /* Koyu yazı rengi */
+            font-size: 1em;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .form-control::placeholder {
+            color: #a3bffa;
+        }
+
+        .form-control:focus {
+            background-color: #ffffff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+        }
+
+        select.form-control {
+            color: #2a2e57;
+        }
+
+        select.form-control option {
+            background-color: #ffffff;
+            color: #2a2e57;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .eklenebilir-alan {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #d4a5ff, #a3e4ff);
+            color: #2a2e57;
+        }
+
+        .eklenebilir-alan .form-control {
+            background-color: #ffffff;
+            color: #2a2e57;
+        }
+
+        .btn-primary {
+            background-color: #ff9f1c;
+            color: #2a2e57;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffb347;
+        }
+
+        .btn-secondary {
+            background-color: #48dbfb;
+            color: #2a2e57;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #70e7fd;
+        }
+
+        .btn-success {
+            background-color: #ff9f1c;
+            color: #2a2e57;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .btn-success:hover {
+            background-color: #ffb347;
+        }
+
+        .btn-danger {
+            background-color: #ff6f61;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .btn-danger:hover {
+            background-color: #ff8a7a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2><i class="fas fa-balance-scale"></i> Emsaller</h2>  <a class="nav-link" href="../anasayfa.html"><i class="fa-solid fa-house-chimney-user"></i> ANASAYFAYA DÖN</a>
+        <nav>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="Tapu-Adres Bilgileri.html"><i class="fas fa-map-marked-alt"></i> Tapu/Adres</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Yasal Kısıtlamalar.html"><i class="fas fa-exclamation-triangle"></i> Yasal Kısıtlama</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="İmar Durumu.html"><i class="fas fa-city"></i> İmar Durumu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Kurum İncelemeleri.html"><i class="fas fa-building"></i> Kurum İnceleme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Ana Gayrimenkul.html"><i class="fas fa-home"></i> Ana Gayrimenkul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Blok Ana Gayrimenkul.html"><i class="fas fa-home"></i> Blok Ana Gayrimenkul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bağımsız Bölüm.html"><i class="fas fa-door-open"></i> Bağımsız Bölüm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="Emsaller.html"><i class="fas fa-balance-scale"></i> Emsaller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Değerleme.html"><i class="fas fa-coins"></i> Değerleme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Taslaklar.html"><i class="fas fa-file-alt"></i> Taslak</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="RAPOR.html"><i class="fas fa-file-invoice"></i> RAPOR</a>
+                </li>
+            </ul>
+        </nav>
+        <form id="emsalForm">
+            <fieldset>
+                <legend>Emsaller</legend>
+                <div id="emsalBilgileriAlani">
+                    <div class="eklenebilir-alan">
+                        <fieldset>
+                            <legend>Emsal Bilgileri</legend>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="emsalDurumu">Emsal Durumu:</label>
+                                    <select class="form-control emsalDurumu" name="emsalDurumu">
+                                        <option>Satılık</option>
+                                        <option>Kiralık</option>
+                                        <option>Satılmış</option>
+                                        <option>Genel Beyan</option>
+                                        <option>Çevre Araştırması</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="emsalKimden">Kimden:</label>
+                                    <select class="form-control emsalKimden" name="emsalKimden">
+                                        <option>Sahibi</option>
+                                        <option>Emlak Ofisi</option>
+                                        <option>Muhtar</option>
+                                        <option>Diğer</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="emsalTelefon">Telefon Numarası:</label>
+                                    <input type="text" class="form-control emsalTelefon" name="emsalTelefon">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="emsalAciklama">Emsal Açıklaması:</label>
+                                    <textarea class="form-control emsalAciklama" name="emsalAciklama" rows="5"></textarea>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="emsalSatisFiyat">Satış Fiyatı:</label>
+                                    <input type="text" class="form-control emsalSatisFiyati" name="emsalSatisFiyati">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="emsalKullanımAlani">Kullanım Alanı:</label>
+                                    <input type="text" class="form-control emsalKullanımAlani" name="emsalKullanımAlani">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="emsalBirimFiyati">Birim Fiyatı:</label>
+                                    <input type="text" class="form-control emsalBirimFiyati" name="emsalBirimFiyati">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="emsalPazarlikOrani">Pazarlık Oranı:</label>
+                                    <input type="text" class="form-control emsalPazarlikOrani" name="emsalPazarlikOrani">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="emsalSerefiyeOrani">Şerefiye Oranı:</label>
+                                    <input type="text" class="form-control emsalSerefiyeOrani" name="emsalSerefiyeOrani">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="emsalNetBirimFiyati">Net Birim Fiyatı:</label>
+                                    <input type="text" class="form-control emsalNetBirimFiyati" name="emsalNetBirimFiyati">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-danger btn-sm" onclick="alanSil(this)"><i class="fas fa-trash"></i> Sil</button>
+                        </fieldset>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success btn-sm" onclick="alanEkle('emsalBilgileriAlani')"><i class="fas fa-plus"></i> Ekle</button>
+            </fieldset>
+            <button type="button" class="btn btn-primary" onclick="kaydetEmsaller()">Kaydet</button>
+            <button type="button" class="btn btn-secondary" onclick="temizleEmsaller()">Temizle</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function kaydetEmsaller() {
+            const emsallerData = [];
+            
+            document.querySelectorAll('#emsalBilgileriAlani .eklenebilir-alan').forEach(alan => {
+                emsallerData.push({
+                    durumu: alan.querySelector('.emsalDurumu').value,
+                    kimden: alan.querySelector('.emsalKimden').value,
+                    telefon: alan.querySelector('.emsalTelefon').value,
+                    aciklama: alan.querySelector('.emsalAciklama').value,
+                    satisFiyati: alan.querySelector('.emsalSatisFiyati').value,
+                    kullanimAlani: alan.querySelector('.emsalKullanımAlani').value,
+                    birimFiyati: alan.querySelector('.emsalBirimFiyati').value,
+                    pazarlikOrani: alan.querySelector('.emsalPazarlikOrani').value,
+                    serefiyeOrani: alan.querySelector('.emsalSerefiyeOrani').value,
+                    netBirimFiyati: alan.querySelector('.emsalNetBirimFiyati').value
+                });
+            });
+        
+            localStorage.setItem('emsaller', JSON.stringify(emsallerData));
+            alert('Emsal bilgileri başarıyla kaydedildi!');
+        }
+        
+        function temizleEmsaller() {
+            const emsalBilgileriAlani = document.getElementById('emsalBilgileriAlani');
+            const ilkAlan = emsalBilgileriAlani.querySelector('.eklenebilir-alan');
+            
+            // Clear all fields
+            emsalBilgileriAlani.innerHTML = '';
+            // Re-add the first field
+            emsalBilgileriAlani.appendChild(ilkAlan);
+            
+            localStorage.removeItem('emsaller');
+            alert('Form temizlendi!');
+        }
+        
+        function calculateBirimFiyat(alan) {
+            const satisFiyati = parseFloat(alan.querySelector('.emsalSatisFiyati').value.replace(',', '.')) || 0;
+            const kullanimAlani = parseFloat(alan.querySelector('.emsalKullanımAlani').value.replace(',', '.')) || 1;
+            
+            if (kullanimAlani > 0) {
+                const birimFiyat = satisFiyati / kullanimAlani;
+                alan.querySelector('.emsalBirimFiyati').value = birimFiyat.toLocaleString('tr-TR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                calculateNetBirimFiyat(alan);
+            }
+        }
+        
+        function calculateNetBirimFiyat(alan) {
+            const birimFiyat = parseFloat(alan.querySelector('.emsalBirimFiyati').value.replace(',', '.')) || 0;
+            const pazarlikOrani = parseFloat(alan.querySelector('.emsalPazarlikOrani').value.replace(',', '.')) || 1;
+            const serefiyeOrani = parseFloat(alan.querySelector('.emsalSerefiyeOrani').value.replace(',', '.')) || 1;
+            
+            const netBirimFiyat = birimFiyat * pazarlikOrani * serefiyeOrani;
+            alan.querySelector('.emsalNetBirimFiyati').value = netBirimFiyat.toLocaleString('tr-TR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        }
+        
+        function addDynamicEntry(containerId) {
+            const container = document.getElementById(containerId);
+            const template = container.querySelector('.eklenebilir-alan');
+            const newEntry = template.cloneNode(true);
+            
+            // Clear all input values in the new entry
+            newEntry.querySelectorAll('input, textarea, select').forEach(input => {
+                input.value = '';
+            });
+            
+            // Add event listeners for calculations
+            const satisFiyatiInput = newEntry.querySelector('.emsalSatisFiyati');
+            const kullanimAlaniInput = newEntry.querySelector('.emsalKullanımAlani');
+            const pazarlikOraniInput = newEntry.querySelector('.emsalPazarlikOrani');
+            const serefiyeOraniInput = newEntry.querySelector('.emsalSerefiyeOrani');
+        
+            satisFiyatiInput.addEventListener('input', () => calculateBirimFiyat(newEntry));
+            kullanimAlaniInput.addEventListener('input', () => calculateBirimFiyat(newEntry));
+            pazarlikOraniInput.addEventListener('input', () => calculateNetBirimFiyat(newEntry));
+            serefiyeOraniInput.addEventListener('input', () => calculateNetBirimFiyat(newEntry));
+            
+            container.appendChild(newEntry);
+        }
+        
+        function alanSil(button) {
+            const alan = button.closest('.eklenebilir-alan');
+            const container = alan.parentElement;
+            
+            // Don't delete if it's the last entry
+            if (container.querySelectorAll('.eklenebilir-alan').length > 1) {
+                alan.remove();
+            }
+        }
+        
+        // Initialize event listeners for the first entry
+        document.addEventListener('DOMContentLoaded', () => {
+            const ilkAlan = document.querySelector('.eklenebilir-alan');
+            if (ilkAlan) {
+                const satisFiyatiInput = ilkAlan.querySelector('.emsalSatisFiyati');
+                const kullanimAlaniInput = ilkAlan.querySelector('.emsalKullanımAlani');
+                const pazarlikOraniInput = ilkAlan.querySelector('.emsalPazarlikOrani');
+                const serefiyeOraniInput = ilkAlan.querySelector('.emsalSerefiyeOrani');
+        
+                satisFiyatiInput.addEventListener('input', () => calculateBirimFiyat(ilkAlan));
+                kullanimAlaniInput.addEventListener('input', () => calculateBirimFiyat(ilkAlan));
+                pazarlikOraniInput.addEventListener('input', () => calculateNetBirimFiyat(ilkAlan));
+                serefiyeOraniInput.addEventListener('input', () => calculateNetBirimFiyat(ilkAlan));
+            }
+        });
+        
+    </script>
+</body>
+</html>

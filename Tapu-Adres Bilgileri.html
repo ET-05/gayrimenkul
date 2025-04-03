@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapu ve Adres Bilgileri</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6b48ff, #00ddeb);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 4000px;
+            background-color: white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #ff6f61;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .nav-tabs {
+            background: linear-gradient(135deg, #d4a5ff, #a3e4ff);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            color: #2a2e57;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #ff6f61;
+        }
+
+        form {
+            background-color: #2a2e57;
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            color: #ff6f61;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .form-group label, .form-check-label {
+            color: #a3bffa;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 25px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ffffff;
+            color: #2a2e57;
+            font-size: 1em;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .form-control::placeholder {
+            color: #a3bffa;
+        }
+
+        .form-control:focus {
+            background-color: #ffffff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .form-check-input {
+            margin-top: 0.4rem;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background-color: #ff9f1c;
+            color: #2a2e57;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffb347;
+        }
+
+        .btn-secondary {
+            background-color: #48dbfb;
+            color: #2a2e57;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #70e7fd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2><i class="fas fa-map-marked-alt"></i> Tapu ve Adres Bilgileri</h2>  <a class="nav-link" href="../anasayfa.html"><i class="fa-solid fa-house-chimney-user"></i> ANASAYFAYA DÖN</a>
+        <nav>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="Tapu-Adres Bilgileri.html"><i class="fas fa-map-marked-alt"></i> Tapu/Adres</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Yasal Kısıtlamalar.html"><i class="fas fa-exclamation-triangle"></i> Yasal Kısıtlama</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="İmar Durumu.html"><i class="fas fa-city"></i> İmar Durumu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Kurum İncelemeleri.html"><i class="fas fa-building"></i> Kurum İnceleme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Ana Gayrimenkul.html"><i class="fas fa-home"></i> Ana Gayrimenkul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Blok Ana Gayrimenkul.html"><i class="fas fa-home"></i> Blok Ana Gayrimenkul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bağımsız Bölüm.html"><i class="fas fa-door-open"></i> Bağımsız Bölüm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Emsaller.html"><i class="fas fa-balance-scale"></i> Emsaller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Değerleme.html"><i class="fas fa-coins"></i> Değerleme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Taslaklar.html"><i class="fas fa-file-alt"></i> Taslak</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="RAPOR.html"><i class="fas fa-file-invoice"></i> RAPOR</a>
+                </li>
+            </ul>
+        </nav>
+        <form id="adresForm">
+            <fieldset>
+                <legend>TAŞINMAZ ADRES BİLGİLERİ</legend>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="adres_il">İl:</label>
+                        <input type="text" class="form-control" id="adres_il">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="adres_ilce">İlçe:</label>
+                        <input type="text" class="form-control" id="adres_ilce">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="adres_mahalle">Mahalle:</label>
+                        <input type="text" class="form-control" id="adres_mahalle">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="adres_sokakcadde">Sokak/Cadde:</label>
+                        <input type="text" class="form-control" id="adres_sokakcadde">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="adres_apartman">Apartman/Site Adı:</label>
+                        <input type="text" class="form-control" id="adres_apartman">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="adres_blok">Blok Numarası:</label>
+                        <input type="text" class="form-control" id="adres_blok">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="adres_diskapi">Dış Kapı Numarası:</label>
+                        <input type="text" class="form-control" id="adres_diskapi">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="adres_ickapi">İç Kapı Numarası:</label>
+                        <input type="text" class="form-control" id="adres_ickapi">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="adres_uavt">UAVT Adres Kodu:</label>
+                        <input type="text" class="form-control" id="adres_uavt">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>TAŞINMAZ TAPU BİLGİLERİ</legend>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="tapu_il">İl:</label>
+                        <input type="text" class="form-control" id="tapu_il">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="tapu_ilce">İlçe:</label>
+                        <input type="text" class="form-control" id="tapu_ilce">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="tapu_mahalle">Mahalle:</label>
+                        <input type="text" class="form-control" id="tapu_mahalle">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="tapu_mevkii">Mevkii:</label>
+                        <input type="text" class="form-control" id="tapu_mevkii">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="tapu_ada">Ada Numarası:</label>
+                        <input type="text" class="form-control" id="tapu_ada">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="tapu_parsel">Parsel Numarası:</label>
+                        <input type="text" class="form-control" id="tapu_parsel">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="tapu_yuzolcum">Yüzölçümü:</label>
+                        <input type="text" class="form-control" id="tapu_yuzolcum">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="tapu_blok">Blok Numarası:</label>
+                        <input type="text" class="form-control" id="tapu_blok">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="tapu_kat">Kat Numarası:</label>
+                        <input type="text" class="form-control" id="tapu_kat">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="tapu_bbno">Bağımsız Bölüm Numarası:</label>
+                        <input type="text" class="form-control" id="tapu_bbno">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="tapu_nitelik">Niteliği:</label>
+                        <input type="text" class="form-control" id="tapu_nitelik">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>TAŞINMAZIN ULAŞIM TARİFİ VE ÇEVRESEL ÖZELLİKLERİ</legend>
+                <div class="form-group">
+                    <label for="ulasimtarifi">TAŞINMAZIN ULAŞIM TARİFİ</label>
+                    <textarea class="form-control" id="ulasimtarifi" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="bolgeozellik">TAŞINMAZIN ÇEVRESEL ÖZELLİKLERİ</label>
+                    <textarea class="form-control" id="bolgeozellik" rows="3"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>ÇEVRE ÖZELLİKLERİ HAZIR METİNLER</legend>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Bölgede sosyal yaşamın gerektirdiği alışveriş, sağlık ocağı, okul, market vb. sosyal ihtiyaçlar kısa mesafelerde karşılanabilmektedir." id="ozellik1">
+                    <label class="form-check-label" for="ozellik1">
+                        Bölgede sosyal yaşamın gerektirdiği alışveriş, sağlık ocağı, okul, market vb. sosyal ihtiyaçlar kısa mesafelerde karşılanabilmektedir.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Taşınmaza özel araçlar ve toplu taşıma araçlarıyla kolaylıkla ulaşılmaktadır." id="ozellik2">
+                    <label class="form-check-label" for="ozellik2">
+                        Taşınmaza özel araçlar ve toplu taşıma araçlarıyla kolaylıkla ulaşılmaktadır.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Planlı yapılaşmaya sahip bölgenin (yol, su, elektrik, doğalgaz, kanalizasyon) altyapısı tamamlanmıştır." id="ozellik3">
+                    <label class="form-check-label" for="ozellik3">
+                        Planlı yapılaşmaya sahip bölgenin (yol, su, elektrik, doğalgaz, kanalizasyon) altyapısı tamamlanmıştır.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Bölge, yeşil alanlara ve parklara yakın bir konumdadır." id="ozellik4">
+                    <label class="form-check-label" for="ozellik4">
+                        Bölge, yeşil alanlara ve parklara yakın bir konumdadır.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Taşınmazın bulunduğu bölge, ticari ve iş merkezlerine yakın bir mesafededir." id="ozellik5">
+                    <label class="form-check-label" for="ozellik5">
+                        Taşınmazın bulunduğu bölge, ticari ve iş merkezlerine yakın bir mesafededir.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Bölge, düzenli bir şehir planlamasına sahiptir ve yapılaşma yoğunluğu düşüktür." id="ozellik6">
+                    <label class="form-check-label" for="ozellik6">
+                        Bölge, düzenli bir şehir planlamasına sahiptir ve yapılaşma yoğunluğu düşüktür.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Taşınmazın çevresinde eğitim kurumları bulunmaktadır." id="ozellik7">
+                    <label class="form-check-label" for="ozellik7">
+                        Taşınmazın çevresinde eğitim kurumları bulunmaktadır.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Bölge, sessiz ve huzurlu bir yaşam alanı sunmaktadır." id="ozellik8">
+                    <label class="form-check-label" for="ozellik8">
+                        Bölge, sessiz ve huzurlu bir yaşam alanı sunmaktadır.
+                    </label>
+                </div>
+            </fieldset>
+
+            <button type="button" class="btn btn-primary" onclick="kaydetTapuAdres()">Kaydet</button>
+            <button type="button" class="btn btn-secondary" onclick="temizleTapuAdres()">Temizle</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Tapu ve Adres Bilgileri formunu kaydetme fonksiyonu
+        function kaydetTapuAdres() {
+            const adresBilgileri = {
+                il: document.getElementById('adres_il').value,
+                ilce: document.getElementById('adres_ilce').value,
+                mahalle: document.getElementById('adres_mahalle').value,
+                sokakcadde: document.getElementById('adres_sokakcadde').value,
+                apartman: document.getElementById('adres_apartman').value,
+                blok: document.getElementById('adres_blok').value,
+                diskapi: document.getElementById('adres_diskapi').value,
+                ickapi: document.getElementById('adres_ickapi').value,
+                uavt: document.getElementById('adres_uavt').value
+            };
+
+            const tapuBilgileri = {
+                il: document.getElementById('tapu_il').value,
+                ilce: document.getElementById('tapu_ilce').value,
+                mahalle: document.getElementById('tapu_mahalle').value,
+                mevkii: document.getElementById('tapu_mevkii').value,
+                ada: document.getElementById('tapu_ada').value,
+                parsel: document.getElementById('tapu_parsel').value,
+                yuzolcum: document.getElementById('tapu_yuzolcum').value,
+                blok: document.getElementById('tapu_blok').value,
+                kat: document.getElementById('tapu_kat').value,
+                bbno: document.getElementById('tapu_bbno').value,
+                nitelik: document.getElementById('tapu_nitelik').value
+            };
+
+            const ulasimCevre = {
+                ulasimTarifi: document.getElementById('ulasimtarifi').value,
+                bolgeOzellik: document.getElementById('bolgeozellik').value
+            };
+
+            const seciliOzellikler = [];
+            document.querySelectorAll('.form-check-input:checked').forEach(checkbox => {
+                seciliOzellikler.push(checkbox.value);
+            });
+
+            localStorage.setItem('adresBilgileri', JSON.stringify(adresBilgileri));
+            localStorage.setItem('tapuBilgileri', JSON.stringify(tapuBilgileri));
+            localStorage.setItem('ulasimCevre', JSON.stringify(ulasimCevre));
+            localStorage.setItem('seciliOzellikler', JSON.stringify(seciliOzellikler));
+
+            alert('Veriler başarıyla kaydedildi!');
+        }
+
+        // Formu temizleme fonksiyonu
+        function temizleTapuAdres() {
+            document.getElementById('adresForm').reset();
+            localStorage.removeItem('adresBilgileri');
+            localStorage.removeItem('tapuBilgileri');
+            localStorage.removeItem('ulasimCevre');
+            localStorage.removeItem('seciliOzellikler');
+            alert('Form temizlendi!');
+        }
+
+        // Sayfa yüklendiğinde kaydedilmiş verileri yükle
+        window.onload = function() {
+            const adresBilgileri = JSON.parse(localStorage.getItem('adresBilgileri'));
+            const tapuBilgileri = JSON.parse(localStorage.getItem('tapuBilgileri'));
+            const ulasimCevre = JSON.parse(localStorage.getItem('ulasimCevre'));
+            const seciliOzellikler = JSON.parse(localStorage.getItem('seciliOzellikler'));
+
+            if (adresBilgileri) {
+                Object.keys(adresBilgileri).forEach(key => {
+                    document.getElementById(`adres_${key}`).value = adresBilgileri[key];
+                });
+            }
+            if (tapuBilgileri) {
+                Object.keys(tapuBilgileri).forEach(key => {
+                    document.getElementById(`tapu_${key}`).value = tapuBilgileri[key];
+                });
+            }
+            if (ulasimCevre) {
+                document.getElementById('ulasimtarifi').value = ulasimCevre.ulasimTarifi;
+                document.getElementById('bolgeozellik').value = ulasimCevre.bolgeOzellik;
+            }
+            if (seciliOzellikler) {
+                seciliOzellikler.forEach(ozellik => {
+                    document.querySelector(`input[value="${ozellik}"]`).checked = true;
+                });
+            }
+        };
+    </script>
+</body>
+</html>

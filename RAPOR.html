@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Değerleme Raporu</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6b48ff, #00ddeb);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 4000px;
+            background-color: white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #ff6f61;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .nav-tabs {
+            background: linear-gradient(135deg, #d4a5ff, #a3e4ff);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            color: #2a2e57;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #ff6f61;
+        }
+
+        form {
+            background-color: #2a2e57;
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            color: #ff6f61;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            color: #ffffff;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 25px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ffffff;
+            color: #2a2e57;
+            font-size: 1em;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .form-control::placeholder {
+            color: #a3bffa;
+        }
+
+        .form-control:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+        }
+
+        select.form-control {
+            color: #2a2e57;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .eklenebilir-alan {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #d4a5ff, #a3e4ff);
+            color: #2a2e57;
+        }
+
+        .btn-primary {
+            background-color: #ff9f1c;
+            color: #2a2e57;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffb347;
+        }
+
+        .btn-secondary {
+            background-color: #48dbfb;
+            color: #2a2e57;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #70e7fd;
+        }
+
+        .btn-success {
+            background-color: #ff9f1c;
+            color: #2a2e57;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .btn-success:hover {
+            background-color: #ffb347;
+        }
+
+        .btn-danger {
+            background-color: #ff6f61;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .btn-danger:hover {
+            background-color: #ff8a7a;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+
+        /* Additional styles for report sections */
+        h1 {
+            color: #2a2e57;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .report-section {
+            margin-bottom: 30px;
+        }
+
+        .report-content {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        /* PDF-specific styles */
+        @media print {
+            .pdf-content {
+                font-size: 0.7em; /* Smaller font size for PDF */
+            }
+            .pdf-content h3 {
+                color: #ff0015 !important; /* Red color for h3 in PDF */
+                font-weight: 700 !important; /* Bold style for h3 in PDF */
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2><i class="fas fa-file-invoice"></i>Değerleme Raporu Taslağı</h2>  <a class="nav-link" href="../anasayfa.html"><i class="fa-solid fa-house-chimney-user"></i> ANASAYFAYA DÖN</a>
+        <nav>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="Tapu-Adres Bilgileri.html"><i class="fas fa-exclamation-triangle"></i> Tapu/Adres</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Yasal Kısıtlamalar.html"><i class="fas fa-exclamation-triangle"></i> Yasal Kısıtlama</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="İmar Durumu.html"><i class="fas fa-city"></i> İmar Durumu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Kurum İncelemeleri.html"><i class="fas fa-building"></i> Kurum İnceleme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="Ana Gayrimenkul.html"><i class="fas fa-home"></i> Ana Gayrimenkul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Blok Ana Gayrimenkul.html"><i class="fas fa-home"></i> Blok Ana Gayrimenkul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bağımsız Bölüm.html"><i class="fas fa-door-open"></i> Bağımsız Bölüm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Emsaller.html"><i class="fas fa-balance-scale"></i> Emsaller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Değerleme.html"><i class="fas fa-coins"></i> Değerleme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Taslaklar.html"><i class="fas fa-file-alt"></i> Taslak</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="RAPOR.html"><i class="fas fa-file-invoice"></i> RAPOR</a>
+                </li>
+            </ul>
+        </nav>
+        <h1>DEĞERLEME RAPORU TASLAĞI</h1>
+        <div class="export-buttons mb-3">
+            <button class="btn btn-primary mr-2" onclick="exportToWord()">
+                <i class="fas fa-file-word"></i> Word Olarak İndir
+            </button>
+            <button class="btn btn-danger" onclick="exportToPDF()">
+                <i class="fas fa-file-pdf"></i> PDF Olarak İndir
+            </button>
+        </div>
+
+        <div class="report-section" id="tapuAdresBilgileri">
+            <h2><i class="fas fa-file-alt"></i> Tapu ve Adres Bilgileri</h2>
+            <div class="report-content">
+                <div id="adresBilgileriRapor"></div>
+                <div id="tapuBilgileriRapor"></div>
+                <div id="ulasimCevreRapor"></div>
+                <div id="seciliOzelliklerRapor"></div>
+            </div>
+        </div>
+
+        <div class="report-section" id="yasalKisitlamalarBilgileri">
+            <h2><i class="fas fa-exclamation-triangle"></i> Yasal Kısıtlamalar</h2>
+            <div class="report-content">
+                <div id="takbisBilgileriRapor"></div>
+                <div id="yasalKisitlamalarRapor"></div>
+                <div id="rehinBilgileriRapor"></div>
+                <div id="yasalNotlarRapor"></div>
+            </div>
+        </div>
+
+        <div class="report-section" id="imarDurumuBilgileri">
+            <h2><i class="fas fa-city"></i> İmar Durumu Bilgileri</h2>
+            <div class="report-content">
+                <div id="imarBilgileriRapor"></div>
+                <div id="imarNotlarRapor"></div>
+            </div>
+        </div>
+
+        <div class="report-section" id="kurumIncelemeleriBilgileri">
+            <h2><i class="fas fa-building"></i> Kurum İncelemeleri</h2>
+            <div class="report-content">
+                <div id="kurumBilgileriRapor"></div>
+            </div>
+        </div>
+
+        <div class="report-section" id="anaGayrimenkulBilgileri">
+            <h2><i class="fas fa-home"></i> Ana Gayrimenkul Bilgileri</h2>
+            <div class="report-content">
+                <div id="anaGayrimenkulBilgileriRapor"></div>
+            </div>
+        </div>
+
+        <div class="report-section" id="blokAnaGayrimenkulBilgileri">
+            <h2><i class="fas fa-building"></i> Blok Ana Gayrimenkul Bilgileri</h2>
+            <div class="report-content">
+                <div id="blokAnaGayrimenkulBilgileriRapor"></div>
+            </div>
+        </div>
+
+        <div class="report-section" id="bagimsizBolumBilgileri">
+            <h2><i class="fas fa-door-open"></i> Bağımsız Bölüm Bilgileri</h2>
+            <div class="report-content">
+                <div id="bagimsizBolumBilgileriRapor"></div>
+            </div>
+        </div>
+
+        <div class="report-section" id="emsallerBilgileri">
+            <h2><i class="fas fa-balance-scale"></i> Emsal Bilgileri</h2>
+            <div class="report-content">
+                <div id="emsallerBilgileriRapor"></div>
+            </div>
+        </div>
+
+        <div class="report-section" id="degerlemeBilgileri">
+            <h2><i class="fas fa-coins"></i> Değerleme Bilgileri</h2>
+            <div class="report-content">
+                <div id="degerlemeBilgileriRapor"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function showDegerlemeBilgileri() {
+            const degerlemeBilgileri = JSON.parse(localStorage.getItem('degerleme_bilgileri')) || {};
+            let html = '<h3>Değerleme Detayları</h3>';
+
+            if (degerlemeBilgileri.satisBilgileri) {
+                const satis = degerlemeBilgileri.satisBilgileri;
+                html += '<h3>Taşınmazın Satışa İlişkin Kanaat Bilgileri</h3>';
+                if (satis.taslak1) html += '<strong>Değerleme konusu taşınmazların bulunduğu konum, çevre, inşai özellikleri,滨a yaşı, bina/blok, kat ve kattaki konum olarak projesi ile uyumlu olması, aynı zamanda da tapu kayıtlarında satışa engel olabilecek herhangi bir takyidat bulunmaması nedeniyle Satılabilir olarak belirtilmiştir. Değerleme konusu taşınmazın bulunduğu konum, çevre, inşai özellikleri, bina yaşı, bina/blok, kat ve kattaki konum olarak projesi ile uyumlu olması, aynı zamanda da tapu kayıtlarında satışa engel olabilecek herhangi bir takyidat bulunmaması nedeniyle "SATILABİLİR" olarak belirtilmiştir.</strong>';
+                if (satis.taslak2) html += '<p>Satış Taslağı 2</p>';
+                if (satis.taslak3) html += '<p>Satış Taslağı 3</p>';
+                if (satis.taslak4) html += '<p>Satış Taslağı 4</p>';
+                html += `<h3>Diğer Satış Kabiliyeti: ${satis.satisKabiliyeti || ''}</h3>`;
+            }
+
+            if (degerlemeBilgileri.olumluFaktorler?.length > 0) {
+                html += '<h4>Olumlu Faktörler</h4><ul>';
+                degerlemeBilgileri.olumluFaktorler.forEach(faktor => {
+                    html += `<li>${faktor}</li>`;
+                });
+                html += '</ul>';
+            }
+
+            if (degerlemeBilgileri.olumsuzFaktorler?.length > 0) {
+                html += '<h4>Olumsuz Faktörler</h4><ul>';
+                degerlemeBilgileri.olumsuzFaktorler.forEach(faktor => {
+                    html += `<li>${faktor}</li>`;
+                });
+                html += '</ul>';
+            }
+
+            if (degerlemeBilgileri.degerlemeDetaylari) {
+                const detay = degerlemeBilgileri.degerlemeDetaylari;
+                html += '<h3>Değerleme Detayları</h3>';
+                html += `<p>Detay ${detay.detay || ''}</p>`;
+                html += `<strong>**TAŞINMAZIN YASAL DURUM DEĞERİ: ${detay.yasalKullanimAlani || ''} m² x ${detay.yasalBirimFiyati || ''} TL/m² = ${detay.toplamYasalDeger || ''} TL </strong><br/>`;
+                html += `<strong>**TAŞINMAZIN MEVCUT DURUM DEĞERİ: ${detay.mevcutKullanimAlani || ''} m² x ${detay.mevcutBirimFiyati || ''} TL/m² = ${detay.toplamMevcutDeger || ''} TL olarak takdir edilmiştir.</strong>`;
+            }
+
+            document.getElementById('degerlemeBilgileriRapor').innerHTML = html;
+        }
+
+        function showTapuAdresBilgileri() {
+            const adresBilgileri = JSON.parse(localStorage.getItem('adresBilgileri')) || {};
+            const tapuBilgileri = JSON.parse(localStorage.getItem('tapuBilgileri')) || {};
+            const ulasimCevre = JSON.parse(localStorage.getItem('ulasimCevre')) || {};
+            const seciliOzellikler = JSON.parse(localStorage.getItem('seciliOzellikler')) || [];
+
+            document.getElementById('adresBilgileriRapor').innerHTML = `
+                <h3>Taşınmaza Ait Açık Adres - Tapu Kayıt - Ulaşım Tarifi Bilgileri</h3>
+                <strong>Değerleme konusu taşınmaz; 
+                ${adresBilgileri.il || ''} ili 
+                ${adresBilgileri.ilce || ''} ilçesi 
+                ${adresBilgileri.mahalle || ''} mahallesi 
+                ${adresBilgileri.sokakcadde || ''} 
+                ${adresBilgileri.apartman || ''} 
+                ${adresBilgileri.blok || ''} Dış Kapı No: 
+                ${adresBilgileri.diskapi || ''} İç Kapı No: 
+                ${adresBilgileri.ickapi || ''} (UAVT: ${adresBilgileri.uavt || ''}) posta adresinde kaindir.</strong>
+            `;
+            document.getElementById('tapuBilgileriRapor').innerHTML = `
+                <strong>Tapu kayıtlarında ise; 
+                ${tapuBilgileri.il || ''} ili 
+                ${tapuBilgileri.ilce || ''} ilçesi 
+                ${tapuBilgileri.mahalle || ''} mahallesi 
+                ${tapuBilgileri.mevkii || ''} 
+                ${tapuBilgileri.ada || ''} ada 
+                ${tapuBilgileri.parsel || ''} parsel numaralı 
+                ${tapuBilgileri.yuzolcum || ''} m2 yüzölçümlü arsa üzerindeki binanın 
+                ${tapuBilgileri.blok || ''} 
+                ${tapuBilgileri.kat || ''} katında konumlu 
+                (${tapuBilgileri.bbno || ''}) bağımsız bölüm numaralı 
+                "${tapuBilgileri.nitelik || ''}" nitelikli taşınmazdır.</strong>
+            `;
+            document.getElementById('ulasimCevreRapor').innerHTML = `
+                <strong>Değerleme konusu taşınmaza ulaşım tarifi olarak; ${ulasimCevre.ulasimTarifi || ''}</strong>
+                <h3>Bölge Yapılaşma Özellikleri</h3>
+                <strong>${ulasimCevre.bolgeOzellik || ''}</strong>
+            `;
+
+            if (seciliOzellikler.length > 0) {
+                document.getElementById('seciliOzelliklerRapor').innerHTML = `
+                    <h3>Bölge ve Çevre Özellikleri</h3>
+                    <strong>${seciliOzellikler.map(ozellik => `${ozellik}`).join('')}</strong>
+                `;
+            }
+        }
+
+        function showYasalKisitlamalar() {
+            const takbisBilgileri = JSON.parse(localStorage.getItem('takbisBilgileri')) || {};
+            const yasalKisitlamalar = JSON.parse(localStorage.getItem('yasalKisitlamalar')) || [];
+            const rehinBilgileri = JSON.parse(localStorage.getItem('rehinBilgileri')) || [];
+            const yasalNotlar = JSON.parse(localStorage.getItem('yasalNotlar')) || [];
+
+            document.getElementById('takbisBilgileriRapor').innerHTML = `
+                <strong>TAKBİS (Tapu ve Kadastro Bilgi Sistemi) ekranından elektronik ortamda ${takbisBilgileri.tarih || ''} tarih ve saat ${takbisBilgileri.saat || ''} itibariyle alınan ve rapor ekinde yer alan Tapu Kayıt Belgesine göre taşınmaz üzerinde aşağıdaki takyidatlar yer almaktadır.</strong>
+                ${takbisBilgileri.takyidatYok ? `<strong>${takbisBilgileri.takyidatText || ''}</strong>` : ''}
+            `;
+
+            if (yasalKisitlamalar.length > 0) {
+                document.getElementById('yasalKisitlamalarRapor').innerHTML = `
+                    <h3>Yasal Kısıtlamalar (Beyan, Şerh, İcrai Haciz) vb</h3>
+                    ${yasalKisitlamalar.map(kisitlama => `
+                        <div class="kisitlama">
+                            <strong>${kisitlama.tip || ''}: 
+                            ${kisitlama.aciklama || ''} 
+                            (${kisitlama.tarih || ''} tarih ve 
+                            ${kisitlama.yevmiye || ''} yevmiye no) 
+                            ${kisitlama.not || ''}</strong>
+                        </div>
+                    `).join('')}
+                `;
+            }
+
+            if (rehinBilgileri.length > 0) {
+                document.getElementById('rehinBilgileriRapor').innerHTML = `
+                    <h3>Banka Rehin Bilgileri</h3>
+                    ${rehinBilgileri.map(rehin => `
+                        <div class="rehin">
+                            <strong>Rehin: ${rehin.banka || ''} lehine 
+                            ${rehin.tutar || ''} bedel ile 
+                            ${rehin.derece || ''} dereceden ipotek kaydı bulunmaktadır. 
+                            (${rehin.tarih || ''} tarih ve 
+                            ${rehin.yevmiye || ''} yevmiye no) 
+                            ${rehin.not || ''}</strong>
+                        </div>
+                    `).join('')}
+                `;
+            }
+
+            if (yasalNotlar.length > 0) {
+                document.getElementById('yasalNotlarRapor').innerHTML = `
+                    <h3>Yasal Notlar</h3>
+                    ${yasalNotlar.map(not => `<strong>${not}</strong>`).join('')}
+                `;
+            }
+        }
+
+        function showImarDurumu() {
+            const imarData = JSON.parse(localStorage.getItem('imar_durumu')) || {};
+            const imarNotlar = JSON.parse(localStorage.getItem('imar_notlar')) || [];
+
+            document.getElementById('imarBilgileriRapor').innerHTML = `
+                <h3>Taşınmaza Ait İmar Durum Bilgileri</h3>
+                <strong>Tarafımıza ibraz edilen tapu ile değerlemesi yapılan gayrimenkulün ${imarData.ada || ''} ada ${imarData.parsel || ''} parsel numaralı taşınmazın parsel bazında yerinin doğruluğu imar paftası incelenmek suretiyle tespit edilmiştir. 
+                ${imarData.belediye_adi || ''} Belediyesi İmar İşleri Müdürlüğünde yapılan incelemede, taşınmazın konumlu olduğu parsel 
+                ${imarData.plan_onay_tarihi || ''} tasdik tarihli 
+                ${imarData.plan_olcegi || ''} ölçekli 
+                ${imarData.plan_tipi || ''} kapsamında 
+                "${imarData.imar_lejandi || ''} Alanı" içerisinde kaldığı 
+                ${imarData.yapi_nizami || ''} Nizam ${imarData.imar_kat || ''} yapılaşma şartlarına sahip olduğu bilgisi edilmiştir. 
+                ${imarData.taks_kaks_hmax || ''} 
+                ${imarData.diger_notlar || ''}</strong>
+            `;
+
+            if (imarNotlar.length > 0) {
+                document.getElementById('imarNotlarRapor').innerHTML = `
+                    <h3>Taşınmaza Ait İmar Durum Notları</h3>
+                    <ul>
+                        ${imarNotlar.map(not => `<li><strong>${not}</strong></li>`).join('')}
+                    </ul>
+                `;
+            }
+        }
+
+        function showKurumIncelemeleri() {
+            const kurumData = JSON.parse(localStorage.getItem('kurum_incelemeleri')) || {};
+
+            let ruhsatHTML = '';
+            if (kurumData.ruhsatBilgileri && kurumData.ruhsatBilgileri.length > 0) {
+                ruhsatHTML = `
+                    <h3>Ruhsat Bilgileri</h3>
+                    ${kurumData.ruhsatBilgileri.map(ruhsat => `
+                        <div class="ruhsat">
+                            <strong>${ruhsat.belediye || ''} Belediyesinde İmar İşleri Müdürlüğünde konu taşınmazın imar arşiv dosyasında ${ruhsat.tarih || ''} tarih ve ${ruhsat.numara || ''} sayılı ${ruhsat.belgeTuru || ''} incelenmiştir.</strong>
+                        </div>
+                    `).join('')}
+                `;
+            }
+
+            document.getElementById('kurumBilgileriRapor').innerHTML = `
+                ${ruhsatHTML}
+                <h3>Ruhsat Detay Bilgileri</h3>
+                <strong>${kurumData.ruhsatDetay?.belgeTuru || ''}: 
+                ${kurumData.ruhsatDetay?.yolKotuAlti || ''} kat yol seviyesi altında 
+                ${kurumData.ruhsatDetay?.yolKotuUstu || ''} kat yol seviyesi üstünde, toplam 
+                ${kurumData.ruhsatDetay?.toplamKatSayisi || ''} katlı 
+                ${kurumData.ruhsatDetay?.yapiSayisi || ''} adet betonarme yapı içerisinde 
+                ${kurumData.ruhsatDetay?.yapiBolumleri || ''} ve ortak kullanım alanları için verilmiş olup, toplam 
+                ${kurumData.ruhsatDetay?.toplamAlan || ''} m2 kapalı alan için hazırlanmıştır. 
+                ${kurumData.ruhsatDetay?.yapiSinifi || ''} 
+                <p>${kurumData.ruhsatDetay?.digerBilgiler || ''}</p></strong>
+                <h3>Enerji Kimlik Bilgileri</h3>
+                ${kurumData.enerjiKimlik?.yok ? 
+                    '<strong>E-Devlet üzerinden yapılan incelemelerde taşınmaza ait Enerji Kimlik Belgesi bulunmamaktadır.</strong>' : 
+                    `<strong>E-Devlet üzerinden yapılan incelemelerde taşınmaza ait ${kurumData.enerjiKimlik?.no || ''} numaralı ${kurumData.enerjiKimlik?.sinif || ''} sınıfında Enerji Kimlik Belgesi bulunmaktadır.</strong>`}
+                <h3>Proje Bilgileri</h3>
+                <strong>${kurumData.projeBilgileri?.kurumAdi || ''} yapılan incelemelerde ${kurumData.projeBilgileri?.tarih || ''} tarih ${kurumData.projeBilgileri?.sayisi || ''} sayılı mimari projesi incelenmiştir.</strong>
+                <h3>Taşınmaza Ait Proje Tespit Bilgileri</h3>
+                <ul>
+                    ${kurumData.projeKontrol?.konumUygun ? '<li><strong>TKGM Webtapu Sisteminde yapılan incelemelerde Blok/Bina bazında yapının konumu vaziyet planıyla uyumludur.</strong></li>' : ''}
+                    ${kurumData.projeKontrol?.konumUygunsuz ? '<li><strong>TKGM Webtapu Sisteminde yapılan incelemelerde Blok/Bina bazında yapının konumu vaziyet planıyla uyumsuzdur.</strong></li>' : ''}
+                    ${kurumData.projeKontrol?.alanUygun ? '<li><strong>TKGM Webtapu Sisteminde yapılan incelemelerde Bağımsız bölüm, kat, konum ve alan açısından mimari projesiyle uyumludur.</strong></li>' : ''}
+                    ${kurumData.projeKontrol?.alanUygunsuz ? '<li><strong>TKGM Webtapu Sisteminde yapılan incelemelerde Bağımsız bölüm, kat, konum ve alan açısından mimari projesiyle uyumsuzdur.</strong></li>' : ''}
+                </ul>
+                <h3>Taşınmaza Ait Proje Diğer Detay Bilgileri</h3>
+                <strong>${kurumData.projeDetay || ''}</strong>
+            `;
+        }
+
+        function showAnaGayrimenkul() {
+            const anaData = JSON.parse(localStorage.getItem('ana_gayrimenkul')) || {};
+
+            let katDagitimlariHTML = '';
+            if (anaData.katDagitimlari && anaData.katDagitimlari.length > 0) {
+                katDagitimlariHTML = `
+                    ${anaData.katDagitimlari.map(kat => `
+                        <strong>${kat.katSecimi || ''} katında; ${kat.aciklama || ''}</strong>
+                    `).join('')}
+                `;
+            }
+
+            document.getElementById('anaGayrimenkulBilgileriRapor').innerHTML = `
+                <h3>Ana Gayrimenkul Bilgileri</h3>
+                <strong>Değerleme konusu (${anaData.bbNumarasi || ''}) bağımsız bölüm numaralı 
+                ${anaData.niteligi || ''} nitelikli taşınmazın konumlu olduğu ana gayrimenkul 
+                ${anaData.adaNumarasi || ''} ada 
+                ${anaData.parselNumarasi || ''} parsel numaralı 
+                ${anaData.yuzolcumu || ''} m2 yüzölçümlü arsa üzerindeki binadır. Bina 
+                ${anaData.yapiSinifi || ''} sınıfında 
+                ${anaData.yapiNizami || ''} nizamda 
+                ${anaData.katDagitimi || ''} olarak projelendirilmiş ve inşa edilmiştir. Onaylı mimari projesinde;</strong>
+                ${katDagitimlariHTML}
+                <h3>Ana Gayrimenkul Özellikleri</h3>
+                <strong>${anaData.anaGayrimenkulOzellikleri || ''}</strong>
+            `;
+        }
+
+        function showBlokAnaGayrimenkul() {
+            const blokData = JSON.parse(localStorage.getItem('blok_ana_gayrimenkul')) || {};
+
+            let katDagitimlariHTML = '';
+            if (blokData.katDagitimlari && blokData.katDagitimlari.length > 0) {
+                katDagitimlariHTML = `
+                    ${blokData.katDagitimlari.map(kat => `
+                        <strong>${kat.katSecimi || ''} katında; ${kat.aciklama || ''}</strong>
+                    `).join('')}
+                `;
+            }
+
+            document.getElementById('blokAnaGayrimenkulBilgileriRapor').innerHTML = `
+                <h3>Blok Ana Gayrimenkul Bilgileri</h3>
+                <strong>Değerleme konusu (${blokData.bbno || ''}) bağımsız bölüm numaralı 
+                ${blokData.nitelik || ''} nitelikli taşınmazın konumlu olduğu ana gayrimenkul 
+                ${blokData.ada || ''} ada 
+                ${blokData.parsel || ''} parsel numaralı 
+                ${blokData.yuzolcumu || ''} m2 yüzölçümlü arsa üzerinde 
+                ${blokData.yapiSinifi || ''} sınıfında 
+                ${blokData.blokDetayi || ''} blok olmak üzere 
+                ${blokData.blokSayisi || ''} adet temel üzerine inşa edilmiş ${blokData.blokSayisi || ''} bloktan oluşan site bulunmaktadır. 
+                Bloklar; ${blokData.yapiSinifi || ''} sınıfında ${blokData.bloknizam || ''} nizam olarak inşa edilmiştir. Değerleme konusu taşınmaz 
+                ${blokData.blokkonumu || ''} konumlu olup, 
+                ${blokData.katDagitimi || ''} olarak projelendirilmiş ve inşa edilmiştir. Onaylı mimari projesine göre;</strong>
+                ${katDagitimlariHTML}
+                <h3>Blok Ana Gayrimenkul Özellikleri</h3>
+                <strong>${blokData.blokAnaGayrimenkulOzellikleri || ''}</strong>
+            `;
+        }
+
+        function showEmsaller() {
+            const emsallerData = JSON.parse(localStorage.getItem('emsaller')) || [];
+
+            if (emsallerData.length > 0) {
+                document.getElementById('emsallerBilgileriRapor').innerHTML = `
+                    <h3>Emsal Bilgileri</h3>
+                    ${emsallerData.map((emsal, index) => `
+                        <div class="emsal-bilgi">
+                            <h5>EMSAL ${index + 1} BİLGİLERİ</h5>
+                            <strong>${emsal.durumu || ''} - ${emsal.kimden || ''} - ${emsal.telefon || ''}: 
+                            ${emsal.aciklama || ''} 
+                            (Birim Fiyat: ${emsal.birimFiyati || ''} TL/m² x ${emsal.pazarlikOrani || ''} pazarlık = ${(emsal.birimFiyati * emsal.pazarlikOrani || 0).toFixed(2)} TL/m²) 
+                            (Birim Fiyat: ${emsal.birimFiyati || ''} TL/m² x ${emsal.pazarlikOrani || ''} pazarlık x ${emsal.serefiyeOrani || ''} şerefiye = ${emsal.netBirimFiyati || ''} TL/m²)</strong>
+                        </div>
+                    `).join('')}
+                `;
+            }
+        }
+
+        function showBagimsizBolum() {
+            const bagimsizData = JSON.parse(localStorage.getItem('bagimsiz_bolum')) || {};
+
+            document.getElementById('bagimsizBolumBilgileriRapor').innerHTML = `
+                <h3>Bloksuz Bağımsız Bölüm Bilgileri</h3>
+                <strong>Değerleme konusu (${bagimsizData.bloksuzBagimsiz?.bbNumarasi || ''}) bağımsız bölüm numaralı 
+                "${bagimsizData.bloksuzBagimsiz?.nitelik || ''}" nitelikli taşınmaz ana gayrimenkulün 
+                ${bagimsizData.bloksuzBagimsiz?.katKonumu || ''} konumludur. 
+                ${bagimsizData.bloksuzBagimsiz?.konumu || ''} 
+                Onaylı mimari projesine göre; ${bagimsizData.bloksuzBagimsiz?.proje || ''} hacimlerinden oluşmakta olup, yasal yaklaşık 
+                ${bagimsizData.bloksuzBagimsiz?.yasalAlan || ''} m2 kullanım alanlı 
+                mevcut yaklaşık ${bagimsizData.bloksuzBagimsiz?.mevcutAlan || ''} m2 kullanım alanlıdır.</strong>
+                <h3>İç Hacim Özellikleri</h3>
+                <strong>${bagimsizData.bloksuzBagimsiz?.icHacimOzellikleri || ''}</strong>
+                <h3>Bloklu Bağımsız Bölüm Bilgileri</h3>
+                <strong>Değerleme konusu (${bagimsizData.blokluBagimsiz?.bbNumarasi || ''}) bağımsız bölüm numaralı 
+                "${bagimsizData.blokluBagimsiz?.nitelik || ''}" nitelikli taşınmaz ana gayrimenkulün 
+                ${bagimsizData.blokluBagimsiz?.blok || ''} 
+                ${bagimsizData.blokluBagimsiz?.katKonumu || ''} konumludur. 
+                ${bagimsizData.blokluBagimsiz?.konumu || ''} 
+                Onaylı mimari projesine göre; ${bagimsizData.blokluBagimsiz?.proje || ''} hacimlerinden oluşmakta olup, yasal yaklaşık 
+                ${bagimsizData.blokluBagimsiz?.yasalAlan || ''} m2 kullanım alanlı 
+                mevcut yaklaşık ${bagimsizData.blokluBagimsiz?.mevcutAlan || ''} m2 kullanım alanlıdır.</strong>
+                <h3>İç Hacim Özellikleri</h3>
+                <strong>${bagimsizData.blokluBagimsiz?.icHacimOzellikleri || ''}</strong>
+            `;
+        }
+
+        function exportToPDF() {
+            // Clone the container to manipulate for PDF
+            const originalContainer = document.querySelector('.container');
+            const pdfContainer = originalContainer.cloneNode(true);
+
+            // Remove navigation and buttons from the clone
+            const nav = pdfContainer.querySelector('nav');
+            const buttons = pdfContainer.querySelector('.export-buttons');
+            if (nav) nav.remove();
+            if (buttons) buttons.remove();
+
+            // Remove .report-content divs and unwrap their contents
+            const reportContents = pdfContainer.querySelectorAll('.report-content');
+            reportContents.forEach(content => {
+                const parent = content.parentNode;
+                while (content.firstChild) {
+                    parent.insertBefore(content.firstChild, content);
+                }
+                content.remove();
+            });
+
+            // Apply PDF-specific styles
+            pdfContainer.classList.add('pdf-content');
+
+            // Configure html2pdf options
+            const opt = {
+                margin: 0, // No margins
+                filename: 'degerleme_raporu.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            // Generate PDF from the modified clone
+            html2pdf().set(opt).from(pdfContainer).save();
+        }
+
+        function exportToWord() {
+            const content = document.querySelector('.container').innerHTML;
+            const blob = new Blob(['\ufeff', content], {
+                type: 'application/msword'
+            });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'ana_gayrimenkul_raporu.doc';
+            link.click();
+        }
+
+        window.onload = function() {
+            showDegerlemeBilgileri();
+            showTapuAdresBilgileri();
+            showYasalKisitlamalar();
+            showImarDurumu();
+            showKurumIncelemeleri();
+            showAnaGayrimenkul();
+            showBlokAnaGayrimenkul();
+            showBagimsizBolum();
+            showEmsaller();
+        };
+    </script>
+</body>
+</html>

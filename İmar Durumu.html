@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İmar Durumu</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6b48ff, #00ddeb);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 4000px;
+            background-color: white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #ff6f61;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .nav-tabs {
+            background: linear-gradient(135deg, #d4a5ff, #a3e4ff);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            color: #2a2e57;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #ff6f61;
+        }
+
+        form {
+            background-color: #2a2e57;
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            color: #ff6f61;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .form-group label, .form-check-label {
+            color: #ffffff;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 25px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ffffff;
+            color: #2a2e57;
+            font-size: 1em;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .form-control::placeholder {
+            color: #a3bffa;
+        }
+
+        .form-control:focus {
+            background-color: #ffffff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+        }
+
+        select.form-control {
+            color: #2a2e57;
+        }
+
+        select.form-control option {
+            background-color: #ffffff;
+            color: #2a2e57;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .form-check-input {
+            margin-top: 0.4rem;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background-color: #ff9f1c;
+            color: #2a2e57;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffb347;
+        }
+
+        .btn-secondary {
+            background-color: #48dbfb;
+            color: #2a2e57;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #70e7fd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2><i class="fas fa-city"></i> İmar Durumu</h2>  <a class="nav-link" href="../anasayfa.html"><i class="fa-solid fa-house-chimney-user"></i> ANASAYFAYA DÖN</a>
+        <nav>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="Tapu-Adres Bilgileri.html"><i class="fas fa-map-marked-alt"></i> Tapu/Adres</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Yasal Kısıtlamalar.html"><i class="fas fa-exclamation-triangle"></i> Yasal Kısıtlama</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="İmar Durumu.html"><i class="fas fa-city"></i> İmar Durumu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Kurum İncelemeleri.html"><i class="fas fa-building"></i> Kurum İnceleme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Ana Gayrimenkul.html"><i class="fas fa-home"></i> Ana Gayrimenkul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Blok Ana Gayrimenkul.html"><i class="fas fa-home"></i> Blok Ana Gayrimenkul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bağımsız Bölüm.html"><i class="fas fa-door-open"></i> Bağımsız Bölüm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Emsaller.html"><i class="fas fa-balance-scale"></i> Emsaller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Değerleme.html"><i class="fas fa-coins"></i> Değerleme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Taslaklar.html"><i class="fas fa-file-alt"></i> Taslak</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="RAPOR.html"><i class="fas fa-file-invoice"></i> RAPOR</a>
+                </li>
+            </ul>
+        </nav>
+        <form id="imarForm">
+            <fieldset>
+                <legend>İmar Durum Bilgileri</legend>
+                <div class="form-row">
+                    <div class="form-group col-md-1">
+                        <label for="imarada">Ada No:</label>
+                        <input type="text" class="form-control" id="imarada">
+                    </div>
+                    <div class="form-group col-md-1">
+                        <label for="imarparsel">Parsel No:</label>
+                        <input type="text" class="form-control" id="imarparsel">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="belediyeAdi">Belediye Adı:</label>
+                        <select class="form-control" id="belediyeAdi">
+                            <option>Amasya</option>
+                            <option>Suluova</option>
+                            <option>Merzifon</option>
+                            <option>Gümüşhacıköy</option>
+                            <option>Taşova</option>
+                            <option>Hamamözü</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="planTipi">Plan Tipi:</label>
+                        <input type="text" class="form-control" id="planTipi">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="planOlcegi">Plan Ölçeği:</label>
+                        <select class="form-control" id="planOlcegi">
+                            <option>1/1000</option>
+                            <option>1/5000</option>
+                            <option>1/25000</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="yapiNizami">Yapı Nizamı:</label>
+                        <select class="form-control" id="yapiNizami">
+                            <option>Ayrık</option>
+                            <option>Bitişik</option>
+                            <option>Ayrık-İkiz</option>
+                            <option>Blok</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="imarLejandi">İmar Lejandı:</label>
+                        <select class="form-control" id="imarLejandi">
+                            <option>Konut</option>
+                            <option>Ticaret</option>
+                            <option>Konut-Ticaret</option>
+                            <option>Ticaret-Turizm</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="imarkat">Kat Adedi:</label>
+                        <input type="text" class="form-control" id="imarkat">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="planOnay">Plan Onay Tarihi ve Adı:</label>
+                        <input type="text" class="form-control" id="planOnay">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="taksKaks">TAKS - KAKS (Emsal) – Hmax:</label>
+                        <input type="text" class="form-control" id="taksKaks">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="digerNotlar">Diğer Notlar:</label>
+                        <textarea class="form-control" id="digerNotlar" rows="6"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Yasal Notlar</legend>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Değerleme konusu taşınmaz belediye sınırları içerisinde konumludur." id="imarnotu1">
+                    <label class="form-check-label" for="imarnotu1">Değerleme konusu taşınmaz belediye sınırları içerisinde konumludur.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Taşınmazın yola/parka terki bulunmadığı, taşınmazın tevhit-ifraz şartı, cephe şartı gibi unsurlardan etkilenmediği, 18. Madde uygulaması tamamlanmış net parsel vasfında ve yapılaşmasına engel bir durum olmadığı bilgisi alınmıştır." id="imarnotu2">
+                    <label class="form-check-label" for="imarnotu2">Taşınmazın yola/parka terki bulunmadığı, taşınmazın tevhit-ifraz şartı, cephe şartı gibi unsurlardan etkilenmediği, 18. Madde uygulaması tamamlanmış net parsel vasfında ve yapılaşmasına engel bir durum olmadığı bilgisi alınmıştır.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="İlgili belediyeden alınan bilgilere göre rapora konu ana taşınmaz dönüşüm projeleri içinde yer almamaktadır." id="imarnotu3">
+                    <label class="form-check-label" for="imarnotu3">İlgili belediyeden alınan bilgilere göre rapora konu ana taşınmaz dönüşüm projeleri içinde yer almamaktadır.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="İlgili belediyeden alınan bilgilere göre değerleme konusu yapıyı da kapsayan bölgelerin riskli alan ilan edilmediği öğrenilmiştir." id="imarnotu4">
+                    <label class="form-check-label" for="imarnotu4">İlgili belediyeden alınan bilgilere göre değerleme konusu yapıyı da kapsayan bölgelerin riskli alan ilan edilmediği öğrenilmiştir.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Taşınmazın imar durumu ilgili belediyeden resmi yazı ile teyit edilmiştir." id="imarnotu5">
+                    <label class="form-check-label" for="imarnotu5">Taşınmazın imar durumu ilgili belediyeden resmi yazı ile teyit edilmiştir.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Bölgenin imar planları güncel olup, herhangi bir revizyon çalışması bulunmamaktadır." id="imarnotu6">
+                    <label class="form-check-label" for="imarnotu6">Bölgenin imar planları güncel olup, herhangi bir revizyon çalışması bulunmamaktadır.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Taşınmazın bulunduğu bölgede kamulaştırma planı bulunmamaktadır." id="imarnotu7">
+                    <label class="form-check-label" for="imarnotu7">Taşınmazın bulunduğu bölgede kamulaştırma planı bulunmamaktadır.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Taşınmazın imar durumu, mevcut yapılaşma ile uyumludur." id="imarnotu8">
+                    <label class="form-check-label" for="imarnotu8">Taşınmazın imar durumu, mevcut yapılaşma ile uyumludur.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Detaylı imar bilgisinin resmi imar durumu başvurusuyla öğrenilebileceği tarafımıza beyan edilmiştir." id="imarnotu9">
+                    <label class="form-check-label" for="imarnotu9">Detaylı imar bilgisinin resmi imar durumu başvurusuyla öğrenilebileceği tarafımıza beyan edilmiştir.</label>
+                </div>
+            </fieldset>
+            <button type="button" class="btn btn-primary" onclick="kaydetImar()">Kaydet</button>
+            <button type="button" class="btn btn-secondary" onclick="temizleImar()">Temizle</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // İmar Durumu formunu kaydetme fonksiyonu
+        function kaydetImar() {
+            const imarData = {
+                imarada: document.getElementById('imarada').value || '',
+                imarparsel: document.getElementById('imarparsel').value || '',
+                belediyeAdi: document.getElementById('belediyeAdi').value || '',
+                planTipi: document.getElementById('planTipi').value || '',
+                planOlcegi: document.getElementById('planOlcegi').value || '',
+                yapiNizami: document.getElementById('yapiNizami').value || '',
+                imarLejandi: document.getElementById('imarLejandi').value || '',
+                imarkat: document.getElementById('imarkat').value || '',
+                planOnay: document.getElementById('planOnay').value || '',
+                taksKaks: document.getElementById('taksKaks').value || '',
+                digerNotlar: document.getElementById('digerNotlar').value || ''
+            };
+
+            const imarNotlar = [];
+            document.querySelectorAll('.form-check-input:checked').forEach(checkbox => {
+                imarNotlar.push(checkbox.value);
+            });
+
+            localStorage.setItem('imarDurumu', JSON.stringify(imarData));
+            localStorage.setItem('imarNotlar', JSON.stringify(imarNotlar));
+
+            alert('İmar bilgileri başarıyla kaydedildi!');
+        }
+
+        // Formu temizleme fonksiyonu
+        function temizleImar() {
+            document.getElementById('imarForm').reset();
+            localStorage.removeItem('imarDurumu');
+            localStorage.removeItem('imarNotlar');
+            alert('Form temizlendi!');
+        }
+
+        // Sayfa yüklendiğinde form verilerini yükle
+        document.addEventListener('DOMContentLoaded', function() {
+            const imarData = JSON.parse(localStorage.getItem('imarDurumu'));
+            const imarNotlar = JSON.parse(localStorage.getItem('imarNotlar'));
+
+            if (imarData) {
+                Object.keys(imarData).forEach(key => {
+                    const element = document.getElementById(key);
+                    if (element) element.value = imarData[key];
+                });
+            }
+
+            if (imarNotlar) {
+                imarNotlar.forEach(not => {
+                    const checkbox = document.querySelector(`input[value="${not}"]`);
+                    if (checkbox) checkbox.checked = true;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

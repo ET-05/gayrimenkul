@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasal Kısıtlamalar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6b48ff, #00ddeb);
+        }
+
+        .container {
+            width: 100%; /* 4000px çok büyük, %80 daha makul */
+            max-width: 4000px;
+            background-color: white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #ff6f61;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .nav-tabs {
+            background: linear-gradient(135deg, #d4a5ff, #a3e4ff);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            color: #2a2e57;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #ff6f61;
+        }
+
+        form {
+            background-color: #2a2e57;
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            color: #ff6f61;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .form-group label, .form-check-label {
+            color: #ffffff;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 25px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ffffff;
+            color: #2a2e57;
+            font-size: 1em;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .form-control::placeholder {
+            color: #a3bffa;
+        }
+
+        .form-control:focus {
+            background-color: #ffffff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+        }
+
+        .eklenebilir-alan {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #d4a5ff, #a3e4ff);
+            color: #2a2e57;
+        }
+
+        .form-check-input {
+            margin-top: 0.4rem;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background-color: #ff9f1c;
+            color: #2a2e57;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffb347;
+        }
+
+        .btn-secondary {
+            background-color: #48dbfb;
+            color: #2a2e57;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #70e7fd;
+        }
+
+        .btn-success {
+            background-color: #48dbfb;
+            color: #2a2e57;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-success:hover {
+            background-color: #70e7fd;
+        }
+
+        .btn-danger {
+            background-color: #ff6f61;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-danger:hover {
+            background-color: #ff8a7a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2><i class="fas fa-exclamation-triangle"></i> Yasal Kısıtlamalar</h2>  <a class="nav-link" href="../anasayfa.html"><i class="fa-solid fa-house-chimney-user"></i> ANASAYFAYA DÖN</a>
+        <nav>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="Tapu-Adres Bilgileri.html"><i class="fas fa-map-marked-alt"></i> Tapu/Adres</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="Yasal Kısıtlamalar.html"><i class="fas fa-exclamation-triangle"></i> Yasal Kısıtlama</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="İmar Durumu.html"><i class="fas fa-city"></i> İmar Durumu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Kurum İncelemeleri.html"><i class="fas fa-building"></i> Kurum İnceleme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Ana Gayrimenkul.html"><i class="fas fa-home"></i> Ana Gayrimenkul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Blok Ana Gayrimenkul.html"><i class="fas fa-home"></i> Blok Ana Gayrimenkul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bağımsız Bölüm.html"><i class="fas fa-door-open"></i> Bağımsız Bölüm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Emsaller.html"><i class="fas fa-balance-scale"></i> Emsaller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Değerleme.html"><i class="fas fa-coins"></i> Değerleme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Taslaklar.html"><i class="fas fa-file-alt"></i> Taslak</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="RAPOR.html"><i class="fas fa-file-invoice"></i> RAPOR</a>
+                </li>
+            </ul>
+        </nav>
+        <form id="yasalForm">
+            <fieldset>
+                <legend>TAKBİS Bilgileri</legend>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="takbisTarih">Tarih:</label>
+                        <input type="date" class="form-control" id="takbisTarih">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="takbisSaat">Saat:</label>
+                        <input type="time" class="form-control" id="takbisSaat">
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Taşınmaza ait herhangi bir takyidat bulunmamaktadır." id="takdiyatyok">
+                        <label class="form-check-label" for="takdiyatyok">
+                            Taşınmaza ait herhangi bir takyidat bulunmamaktadır.
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Yasal Kısıtlamalar (Beyan, Şerh, İcrai Haciz)</legend>
+                <div id="yasalKisitmalarAlani"></div>
+                <button type="button" class="btn btn-success btn-sm" onclick="alanEkle('yasalKisitmalarAlani')"><i class="fas fa-plus"></i> Ekle</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Rehin Bilgileri</legend>
+                <div id="rehinBilgileriAlani"></div>
+                <button type="button" class="btn btn-success btn-sm" onclick="alanEkle('rehinBilgileriAlani')"><i class="fas fa-plus"></i> Ekle</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Yasal Notlar</legend>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Yönetim planı, ana taşınmazın yönetim tarzını, kullanma maksat ve şeklini, yönetici ve denetçilerin alacakları ücreti ve yönetime ait diğer hususları ve bütün kat maliklerini bağlayan sözleşme hükmündeki bir belgedir. Söz konusu beyan, taşınmazın satışını ve/veya taşınmaz üzerinde ipotek tesisi edilmesini kısıtlayıcı bir faktör oluşturmamaktadır." id="notYonetimPlani">
+                    <label class="form-check-label" for="notYonetimPlani">Yönetim Planı Notu</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="6306 Sayılı kanunun gereğince riskli yapı beyanı parsel üzerinde eski yapıya aittir. Söz konusu beyan, taşınmazın satışını ve/veya taşınmaz üzerinde ipotek tesisi edilmesini kısıtlayıcı bir faktör oluşturmamaktadır." id="notRiskliYapi">
+                    <label class="form-check-label" for="notRiskliYapi">6306 Sayılı Kanun gereğince riskli yapıdır</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Taşınmazın tapu kayıtları üzerinde bulunan 3402/22/a gereğince şerh bölgede bulunan parsellerin teknolojik aletler yardımı ile ölçümlerinin tekrarlanacağı ve paftaların yenileneceği, parsel yüzölçümü ve sınırlarında değeri ve konumu önemli ölçüde etkilemeyecek nitelikte değişiklikler olabileceği, dolayısıyla işlemin taşınmazın değerini ve satış kabiliyetini etkileyecek sonuçlar doğurmayacağı öğrenilmiştir." id="notSerh">
+                    <label class="form-check-label" for="notSerh">3402/22/a gereğince şerh</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Tapu kütüğü kontrol edilememiştir." id="notKutukKontrol">
+                    <label class="form-check-label" for="notKutukKontrol">Tapu kütüğü kontrol edilememiştir.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Taşınmazın mevcut durumu tapu kayıtlarıyla uyumludur." id="yasalnot1">
+                    <label class="form-check-label" for="yasalnot1">Taşınmazın mevcut durumu tapu kayıtlarıyla uyumludur.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Taşınmaz üzerinde herhangi bir kamulaştırma işlemi bulunmamaktadır." id="yasalnot2">
+                    <label class="form-check-label" for="yasalnot2">Taşınmaz üzerinde herhangi bir kamulaştırma işlemi bulunmamaktadır.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Taşınmazın tapu kayıtlarında herhangi bir ihtilaf bulunmamaktadır." id="yasalnot3">
+                    <label class="form-check-label" for="yasalnot3">Taşınmazın tapu kayıtlarında herhangi bir ihtilaf bulunmamaktadır.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Taşınmazın kullanımına engel teşkil edecek bir durum tespit edilmemiştir." id="yasalnot4">
+                    <label class="form-check-label" for="yasalnot4">Taşınmazın kullanımına engel teşkil edecek bir durum tespit edilmemiştir.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Taşınmazın tapu kayıtları ilgili belediye ile uyumludur." id="yasalnot5">
+                    <label class="form-check-label" for="yasalnot5">Taşınmazın tapu kayıtları ilgili belediye ile uyumludur.</label>
+                </div>
+            </fieldset>
+
+            <button type="button" class="btn btn-primary" onclick="kaydetYasal()">Kaydet</button>
+            <button type="button" class="btn btn-secondary" onclick="temizleYasal()">Temizle</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Alan ekleme fonksiyonu
+        function alanEkle(containerId) {
+            const container = document.getElementById(containerId);
+            const div = document.createElement('div');
+            div.className = 'eklenebilir-alan';
+
+            if (containerId === 'yasalKisitmalarAlani') {
+                div.innerHTML = `
+                    <div class="form-row">
+                        <div class="form-group col-md-1">
+                            <label for="yasalTip">Tip:</label>
+                            <select class="form-control yasalTip" name="yasalTip">
+                                <option>Beyan</option>
+                                <option>Şerh</option>
+                                <option>İcrai Haciz</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="yasalAciklama">Açıklama:</label>
+                            <input type="text" class="form-control yasalAciklama" name="yasalAciklama">
+                        </div>
+                        <div class="form-group col-md-1">
+                            <label for="yasalTarih">Tarih:</label>
+                            <input type="date" class="form-control yasalTarih" name="yasalTarih">
+                        </div>
+                        <div class="form-group col-md-1">
+                            <label for="yasalYevmiye">Yevmiye No:</label>
+                            <input type="number" class="form-control yasalYevmiye" name="yasalYevmiye">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="yasalNot">Not:</label>
+                            <input type="text" class="form-control yasalNot" name="yasalNot">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="alanSil(this)"><i class="fas fa-trash"></i> Sil</button>
+                `;
+            } else if (containerId === 'rehinBilgileriAlani') {
+                div.innerHTML = `
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="rehinBanka">Banka:</label>
+                            <input type="text" class="form-control rehinBanka" name="rehinBanka">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="rehinTutar">Tutar:</label>
+                            <input type="text" class="form-control rehinTutar" name="rehinTutar">
+                        </div>
+                        <div class="form-group col-md-1">
+                            <label for="rehinDerece">Derece:</label>
+                            <input type="text" class="form-control rehinDerece" name="rehinDerece">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="rehinTarih">Tarih:</label>
+                            <input type="date" class="form-control rehinTarih" name="rehinTarih">
+                        </div>
+                        <div class="form-group col-md-1">
+                            <label for="rehinYevmiye">Yevmiye No:</label>
+                            <input type="number" class="form-control rehinYevmiye" name="rehinYevmiye">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="rehinNot">Not:</label>
+                            <input type="text" class="form-control rehinNot" name="rehinNot">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="alanSil(this)"><i class="fas fa-trash"></i> Sil</button>
+                `;
+            }
+            container.appendChild(div);
+        }
+
+        // Alan silme fonksiyonu
+        function alanSil(button) {
+            const alan = button.parentElement;
+            const container = alan.parentElement;
+            if (container.querySelectorAll('.eklenebilir-alan').length > 1) {
+                alan.remove();
+            } else {
+                alert('En az bir alan bulunmalıdır!');
+            }
+        }
+
+        // Yasal Kısıtlamalar formunu kaydetme fonksiyonu
+        function kaydetYasal() {
+            const takbisBilgileri = {
+                tarih: document.getElementById('takbisTarih').value,
+                saat: document.getElementById('takbisSaat').value,
+                takyidatYok: document.getElementById('takdiyatyok').checked,
+                takyidatText: document.getElementById('takdiyatyok').checked ? 
+                    `TAKBİS (Tapu ve Kadastro Bilgi Sistemi) ekranından elektronik ortamda ${document.getElementById('takbisTarih').value} tarih ve saat ${document.getElementById('takbisSaat').value} itibariyle alınan ve rapor ekinde yer alan Tapu Kayıt Belgesine göre taşınmaz üzerinde herhangi bir takyidat yer almamaktadır.` : 
+                    `TAKBİS (Tapu ve Kadastro Bilgi Sistemi) ekranından elektronik ortamda ${document.getElementById('takbisTarih').value} tarih ve saat ${document.getElementById('takbisSaat').value} itibariyle alınan ve rapor ekinde yer alan Tapu Kayıt Belgesine göre taşınmaz üzerinde aşağıdaki takyidatlar yer almaktadır.`
+            };
+
+            const yasalKisitlamalar = [];
+            document.querySelectorAll('#yasalKisitmalarAlani .eklenebilir-alan').forEach(alan => {
+                yasalKisitlamalar.push({
+                    tip: alan.querySelector('.yasalTip').value,
+                    aciklama: alan.querySelector('.yasalAciklama').value,
+                    tarih: alan.querySelector('.yasalTarih').value,
+                    yevmiye: alan.querySelector('.yasalYevmiye').value,
+                    not: alan.querySelector('.yasalNot').value
+                });
+            });
+
+            const rehinBilgileri = [];
+            document.querySelectorAll('#rehinBilgileriAlani .eklenebilir-alan').forEach(alan => {
+                rehinBilgileri.push({
+                    banka: alan.querySelector('.rehinBanka').value,
+                    tutar: alan.querySelector('.rehinTutar').value,
+                    derece: alan.querySelector('.rehinDerece').value,
+                    tarih: alan.querySelector('.rehinTarih').value,
+                    yevmiye: alan.querySelector('.rehinYevmiye').value,
+                    not: alan.querySelector('.rehinNot').value
+                });
+            });
+
+            const yasalNotlar = [];
+            document.querySelectorAll('.form-check-input:checked').forEach(checkbox => {
+                yasalNotlar.push(checkbox.value);
+            });
+
+            localStorage.setItem('takbisBilgileri', JSON.stringify(takbisBilgileri));
+            localStorage.setItem('yasalKisitlamalar', JSON.stringify(yasalKisitlamalar));
+            localStorage.setItem('rehinBilgileri', JSON.stringify(rehinBilgileri));
+            localStorage.setItem('yasalNotlar', JSON.stringify(yasalNotlar));
+
+            alert('Veriler başarıyla kaydedildi!');
+        }
+
+        // Formu temizleme fonksiyonu
+        function temizleYasal() {
+            document.getElementById('yasalForm').reset();
+            document.getElementById('yasalKisitmalarAlani').innerHTML = '';
+            document.getElementById('rehinBilgileriAlani').innerHTML = '';
+            alanEkle('yasalKisitmalarAlani'); // Varsayılan bir alan ekle
+            alanEkle('rehinBilgileriAlani'); // Varsayılan bir alan ekle
+            localStorage.removeItem('takbisBilgileri');
+            localStorage.removeItem('yasalKisitlamalar');
+            localStorage.removeItem('rehinBilgileri');
+            localStorage.removeItem('yasalNotlar');
+            alert('Form temizlendi!');
+        }
+
+        // Sayfa yüklendiğinde varsayılan alanları ekle
+        window.onload = function() {
+            alanEkle('yasalKisitmalarAlani');
+            alanEkle('rehinBilgileriAlani');
+        };
+    </script>
+</body>
+</html>
